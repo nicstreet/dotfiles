@@ -1,0 +1,222 @@
+# Description: I3-Gaps Configuration File
+# Author:      Nic Street
+# Date:        August 2018
+# Github:      https://github.com/nicstreet
+# Twitter:     @nicstreet
+# Modified:    22nd April 2019 - Base Config
+#              25th April 2019 - Additional window management & New Colour Scheme
+#              28th April 2019 - Major reconfiguration witrh Polybar
+#              29th April 2019 - Moved .config files to ~/dotfiles to allow git backup
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8, FontAwesome, 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+# bindsym $mod+d exec dmenu_run (uncomment to restore default i3 dmenu)
+bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "Misc Termsyn 10" -width 36 -columns 4
+
+# Keybinding
+# Change Focus using the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal/vertical orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# NS:Declare variables for Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "0"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+# These bindings trigger as soon as you enter the resize mode
+mode "resize" {
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Wallpaper
+exec_always feh --bg-scale /root/.config/i3/wallpaper.jpeg
+
+# I3 Gaps (default 3 and 12)
+gaps outer 3
+gaps inner 20
+
+# Keybindings (Custom)
+bindsym $mod+ctrl+l exec i3lock
+# bindsym shift+control+s exec pavucontrol
+bindsym $mod+r mode "resize"
+bindsym $mod+Print exec "deepin-screenshot -n"
+
+# Pulse Audio Controls
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# bindsym $mod+control+equal exec --no-startup-id pactl set-sink-volume 0 +5
+# bindsym $mod+control+minus exec --no-startup-id pactl set-sink-volume 0 -5
+
+# Media Player Controls
+# bindsym XF86AudioPlay exec playerctl play
+# bindsym XF86AudioPause exec playerctl pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
+
+# Auto Launch Applications
+# exec google-chrome
+# exec google-chrome http://www.bbc.co.uk/sport
+# exec cherrytree
+# exec virtualbox
+# exec nautilus
+# exec hardinfo
+# exec gnome-terminal
+
+exec xfce4-clipman
+exec nm-applet
+exec /usr/bin/compton --config /root/.config/compton.conf
+exec terminator -g ~/.config/terminator/config -p streety
+exec terminator -g ~/.config/terminator/config -p streety
+exec xfce-clipman
+exec ~/.dropbox-dist/dropboxd
+exec firefox
+exec zim
+exec "msfdb start"
+
+# Assign Applications to Workspaces
+assign [class="Firefox"] $ws2
+assign [class="Google-chrome"] $ws2
+assign [class="Cherrytree"] $ws3
+assign [class="VirtualBox Manager"] $ws4
+assign [class="VirtualBox Machine"] $ws4
+assign [class="Hardinfo"] $ws7
+assign [class="Nautilus"] $ws7
+assign [class="Zim"] $ws3
+assign [class="Filezilla"] $ws4
+# assign [class="Atom"] $ws4
+
+# Custom mappings for behaviour and applications
+# bindsym $mod+p exec system-config-printer
+bindsym $mod+n exec nm-connection-editor
+
+# set primary gruvbox colorscheme colors
+set $color0 #140a06
+set $color1 #9d6f53
+set $color2 #e3a51d
+set $color3 #B38A67
+#set $color4 #cf9863
+set $color4 #ffaf5f
+set $color5 #c9778e
+set $color6 #deac93
+set $color7 #e3dbd6
+set $color8 #9e9995
+
+# font used by i3 for titles and bars
+# font pango:Hack 8
+
+# Modified 22-04-2019 (Replace default bar with Polybar)
+exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
+
+# aqua gruvbox
+# class                  border|backgr|text|indicator|child_border
+client.focused           $color2 $color2 $color0 $color2 $color2
+client.focused_inactive  $color1 $color1 $color0 $color1 $color1
+client.unfocused         $color1 $color1 $color0 $color1 $color1
+client.urgent            $color5 $color5 $color0 $color1 $color5
+
+# Rolling modifications, to be moved to correct section once tested and working.
+for_window [class="Terminator" instance="terminator" title="Terminator Preferences"] floating enable
+for_window [class="Nm-connection-editor" instance="nm-connection-editor" title="Network Connections"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol" title="Volume Control"] floating enable
+for_window [class="Lxappearance" instance="lxappearance" title="Customise Look and Feel"] floating enable
+for_window [class="Qtconfig-qt4" instance="qtconfig-qt4" title="Qt Configuration"] floating enable
+for_window [class="VirtualBox Manager" instance="VirtualBox Manager" title="Oracle VM VirtualBox Manager"] floating enable
+
+# Future Use
+# Using Templates
+# exec --no-startup-id i3-msg "workspace $ws2; append_layout /home/jarvick/.config/i3/terms.layout; exec $term; exec $term; exec $term;"
+
+# Restart i3 to enforce Compton transparency
+exec "sh -c 'sleep 6; exec i3-msg restart'"
