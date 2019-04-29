@@ -1,0 +1,14 @@
+rofi.color-enabled: true
+rofi.color-window: argb:cc2f343f, argb:cc2f343f, argb:e62f343f
+rofi.color-normal: argb:e62f343f, #d8dee8, argb:002f343f, argb:002f343f, #bf616a
+rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
+rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b
+rofi.width: 20
+rofi.lines: 20
+rofi.columns: 1
+rofi.font: Noto Sans 8
+rofi.bw: 0
+!rofi.padding: 400
+rofi.eh: 1
+!rofi.separator-style: solid
+!rofi.hide-scrollbar: true
