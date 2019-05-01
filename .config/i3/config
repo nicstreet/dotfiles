@@ -7,7 +7,18 @@
 #              25th April 2019 - Additional window management & New Colour Scheme
 #              28th April 2019 - Major reconfiguration witrh Polybar
 #              29th April 2019 - Moved .config files to ~/dotfiles to allow git backup
+#              30th April 2019 - Addition (1) - no borders + modified gaps (from 20/3 to 7/1)
+#              30th April 2019 - Configured colours to use .Xresources
 
+# Addition (1)
+for_window [class="^.*"] border pixel 1
+
+# Addition (2)
+# Create scratchpad and use (minus) key
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Set modifier as left Win key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -100,12 +111,28 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# Custom key mappings for behaviour and applications
+
+# bindsym $mod+p exec system-config-printer
+bindsym $mod+n exec nm-connection-editor
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Keybinding - LOCK
+bindsym $mod+ctrl+l exec i3lock
+
+# Keybinding - Resize Window
+bindsym $mod+r mode "resize"
+
+# Keybinding - PRINTSCREEN
+bindsym $mod+Print exec "deepin-screenshot -n"
 
 # resize window (you can also use the mouse for that)
 # These bindings trigger as soon as you enter the resize mode
@@ -122,15 +149,9 @@ mode "resize" {
 # Wallpaper
 exec_always feh --bg-scale /root/.config/i3/wallpaper.jpeg
 
-# I3 Gaps (default 3 and 12)
-gaps outer 3
-gaps inner 20
-
-# Keybindings (Custom)
-bindsym $mod+ctrl+l exec i3lock
-# bindsym shift+control+s exec pavucontrol
-bindsym $mod+r mode "resize"
-bindsym $mod+Print exec "deepin-screenshot -n"
+# I3 Gaps (NS default 3 and 20)
+gaps outer 2
+gaps inner 14
 
 # Pulse Audio Controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5
@@ -177,21 +198,35 @@ assign [class="Zim"] $ws3
 assign [class="Filezilla"] $ws4
 # assign [class="Atom"] $ws4
 
-# Custom mappings for behaviour and applications
-# bindsym $mod+p exec system-config-printer
-bindsym $mod+n exec nm-connection-editor
+# Set colours via variables using .Xresources
+set_from_resource $color0 i3wm.color0 #000000
+set_from_resource $color1 i3wm.color1 #333333
+set_from_resource $color2 i3wm.color2 #666666
+set_from_resource $color3 i3wm.color3 #999999
+set_from_resource $color4 i3wm.color4 #ababab
+set_from_resource $color5 i3wm.color5 #000000
+set_from_resource $color6 i3wm.color6 #000000
+set_from_resource $color7 i3wm.color7 #000000
+set_from_resource $color8 i3wm.color8 #000000
+set_from_resource $color9 i3wm.color9 #000000
+set_from_resource $color10 i3wm.color10 #000000
+set_from_resource $color11 i3wm.color11 #000000
+set_from_resource $color12 i3wm.color12 #000000
+set_from_resource $color13 i3wm.color13 #000000
+set_from_resource $color14 i3wm.color14 #000000
+set_from_resource $color15 i3wm.color15 #000000
 
 # set primary gruvbox colorscheme colors
-set $color0 #140a06
-set $color1 #9d6f53
-set $color2 #e3a51d
-set $color3 #B38A67
-#set $color4 #cf9863
-set $color4 #ffaf5f
-set $color5 #c9778e
-set $color6 #deac93
-set $color7 #e3dbd6
-set $color8 #9e9995
+# set $color0 #140a06
+# set $color1 #9d6f53
+# set $color2 #e3a51d
+# set $color3 #B38A67
+# set $color4 #cf9863
+# set $color4 #ffaf5f
+# set $color5 #c9778e
+# set $color6 #deac93
+# set $color7 #e3dbd6
+# set $color8 #9e9995
 
 # font used by i3 for titles and bars
 # font pango:Hack 8
@@ -199,14 +234,14 @@ set $color8 #9e9995
 # Modified 22-04-2019 (Replace default bar with Polybar)
 exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
 
-# aqua gruvbox
-# class                  border|backgr|text|indicator|child_border
+# Window Colours and decorations
+# class                  border| backgr| text|   indica| child_border
 client.focused           $color2 $color2 $color0 $color2 $color2
 client.focused_inactive  $color1 $color1 $color0 $color1 $color1
 client.unfocused         $color1 $color1 $color0 $color1 $color1
 client.urgent            $color5 $color5 $color0 $color1 $color5
 
-# Rolling modifications, to be moved to correct section once tested and working.
+# Individual Window Options
 for_window [class="Terminator" instance="terminator" title="Terminator Preferences"] floating enable
 for_window [class="Nm-connection-editor" instance="nm-connection-editor" title="Network Connections"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol" title="Volume Control"] floating enable

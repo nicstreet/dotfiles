@@ -18,7 +18,7 @@
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True
-    palette = "#140a06:#9d6f53:#e3a51d:#b38a67:#cf9863:#c9778e:#deac93:#e3dbd6:#9e9995:#9d6f53:#e3a51d:#b38a67:#cf9863:#c9778e:#deac93:#e3dbd6"
+    palette = "#0b130c:#a45e4e:#86405f:#be9a7a:#583a78:#644692:#a751a9:#b1b8b8:#7b8080:#a45e4e:#86405f:#be9a7a:#583a78:#644692:#a751a9:#b1b8b8"
     use_system_font = False
 [layouts]
   [[default]]
