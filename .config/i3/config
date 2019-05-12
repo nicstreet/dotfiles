@@ -1,22 +1,23 @@
 # Description: I3-Gaps Configuration File
 # Author:      Nic Street
-# Date:        August 2018
+# Date:        April 2019
 # Github:      https://github.com/nicstreet
 # Twitter:     @nicstreet
-# Modified:    22nd April 2019 - Base Config
-#              25th April 2019 - Additional window management & New Colour Scheme
-#              28th April 2019 - Major reconfiguration witrh Polybar
-#              29th April 2019 - Moved .config files to ~/dotfiles to allow git backup
-#              30th April 2019 - Addition (1) - no borders + modified gaps (from 20/3 to 7/1)
-#              30th April 2019 - Configured colours to use .Xresources
+# Modified:    22nd Apr 2019 - Base Config
+#              25th Apr 2019 - Additional window management & New Colour Scheme
+#              28th Apr 2019 - Reconfiguration with Polybar
+#              29th Apr 2019 - Moved .config files to ~/dotfiles to allow git backup
+#              30th Apr 2019 - Addition (1) - no borders + modified gaps (from 20/3 to 7/1)
+#              30th Apr 2019 - Configured colours to use .Xresources
+#              01st May 2019 - Addition (2) - scratchpad implemented
+#              06th May 2019 - Renoved non-use functionality and code tidy-up
+#              07th May 2019 - Changed terminal from Terminator to URxvt
+#              10th May 2019 - Reverted back to Terminator (created walminator.py to update Terminator Colorschemes
+#                            - Removed nm-applet from startup - causing mouse pointer issues
+#              12th May 2019 - Tidy up - Non used configuration moved to config.removed
 
 # Addition (1)
-for_window [class="^.*"] border pixel 1
-
-# Addition (2)
-# Create scratchpad and use (minus) key
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+for_window [class="^.*"] border pixel 3
 
 # Set modifier as left Win key
 set $mod Mod4
@@ -34,8 +35,7 @@ bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run (uncomment to restore default i3 dmenu)
+# Configure rofi as d,enu replacement
 bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "Misc Termsyn 10" -width 36 -columns 4
 
 # Keybinding
@@ -72,10 +72,13 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
+# Launch Music player rofi menu
+bindsym $mod+m exec "bash /$HOME/.config/i3/musicmenu.sh"
 
-# NS:Declare variables for Workspaces
+# Launch window rofi menu
+bindsym $mod1+Tab exec "bash /$HOME/.config/i3/windowmenu.sh"
+
+# Declare variables for Workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -112,18 +115,11 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Custom key mappings for behaviour and applications
-
-# bindsym $mod+p exec system-config-printer
-bindsym $mod+n exec nm-connection-editor
-
-# reload the configuration file
+# Keybinding - Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Keybinding - Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Keybinding - LOCK
 bindsym $mod+ctrl+l exec i3lock
@@ -149,66 +145,44 @@ mode "resize" {
 # Wallpaper
 exec_always feh --bg-scale /root/.config/i3/wallpaper.jpeg
 
-# I3 Gaps (NS default 3 and 20)
+# Configure gaops size
 gaps outer 2
 gaps inner 14
 
-# Pulse Audio Controls
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-# bindsym $mod+control+equal exec --no-startup-id pactl set-sink-volume 0 +5
-# bindsym $mod+control+minus exec --no-startup-id pactl set-sink-volume 0 -5
-
-# Media Player Controls
-# bindsym XF86AudioPlay exec playerctl play
-# bindsym XF86AudioPause exec playerctl pause
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
-
-# Auto Launch Applications
-# exec google-chrome
-# exec google-chrome http://www.bbc.co.uk/sport
-# exec cherrytree
-# exec virtualbox
-# exec nautilus
-# exec hardinfo
-# exec gnome-terminal
-
+# Start applications on startup
 exec xfce4-clipman
-exec nm-applet
 exec /usr/bin/compton --config /root/.config/compton.conf
-exec terminator -g ~/.config/terminator/config -p streety
-exec terminator -g ~/.config/terminator/config -p streety
+exec "terminator -g ~/.config/terminator/config -p streety"
+exec "terminator -g ~/.config/terminator/config -p streety"
 exec xfce-clipman
 exec ~/.dropbox-dist/dropboxd
 exec firefox
 exec zim
 exec "msfdb start"
+exec code --user-data-dir ~/Dropbox/working
+# exec nm-applet
 
 # Assign Applications to Workspaces
 assign [class="Firefox"] $ws2
 assign [class="Google-chrome"] $ws2
 assign [class="Cherrytree"] $ws3
-assign [class="VirtualBox Manager"] $ws4
-assign [class="VirtualBox Machine"] $ws4
-assign [class="Hardinfo"] $ws7
+assign [class="VirtualBox Manager"] $ws5
+assign [class="VirtualBox Machine"] $ws5
 assign [class="Nautilus"] $ws7
 assign [class="Zim"] $ws3
-assign [class="Filezilla"] $ws4
-# assign [class="Atom"] $ws4
+assign [class="Code"] $ws4 
 
 # Set colours via variables using .Xresources
-set_from_resource $color0 i3wm.color0 #000000
-set_from_resource $color1 i3wm.color1 #333333
-set_from_resource $color2 i3wm.color2 #666666
-set_from_resource $color3 i3wm.color3 #999999
-set_from_resource $color4 i3wm.color4 #ababab
-set_from_resource $color5 i3wm.color5 #000000
-set_from_resource $color6 i3wm.color6 #000000
-set_from_resource $color7 i3wm.color7 #000000
-set_from_resource $color8 i3wm.color8 #000000
-set_from_resource $color9 i3wm.color9 #000000
+set_from_resource $color0  i3wm.color0  #000000
+set_from_resource $color1  i3wm.color1  #333333
+set_from_resource $color2  i3wm.color2  #666666
+set_from_resource $color3  i3wm.color3  #999999
+set_from_resource $color4  i3wm.color4  #ababab
+set_from_resource $color5  i3wm.color5  #000000
+set_from_resource $color6  i3wm.color6  #000000
+set_from_resource $color7  i3wm.color7  #000000
+set_from_resource $color8  i3wm.color8  #000000
+set_from_resource $color9  i3wm.color9  #000000
 set_from_resource $color10 i3wm.color10 #000000
 set_from_resource $color11 i3wm.color11 #000000
 set_from_resource $color12 i3wm.color12 #000000
@@ -216,30 +190,15 @@ set_from_resource $color13 i3wm.color13 #000000
 set_from_resource $color14 i3wm.color14 #000000
 set_from_resource $color15 i3wm.color15 #000000
 
-# set primary gruvbox colorscheme colors
-# set $color0 #140a06
-# set $color1 #9d6f53
-# set $color2 #e3a51d
-# set $color3 #B38A67
-# set $color4 #cf9863
-# set $color4 #ffaf5f
-# set $color5 #c9778e
-# set $color6 #deac93
-# set $color7 #e3dbd6
-# set $color8 #9e9995
-
-# font used by i3 for titles and bars
-# font pango:Hack 8
-
 # Modified 22-04-2019 (Replace default bar with Polybar)
 exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
 
 # Window Colours and decorations
-# class                  border| backgr| text|   indica| child_border
-client.focused           $color2 $color2 $color0 $color2 $color2
-client.focused_inactive  $color1 $color1 $color0 $color1 $color1
-client.unfocused         $color1 $color1 $color0 $color1 $color1
-client.urgent            $color5 $color5 $color0 $color1 $color5
+# class                  border		backgr		text		indicator	child_border
+client.focused           $color6 	$color6 	$color0 	$color2 	$color6
+client.focused_inactive  $color1 	$color1 	$color0 	$color1 	$color1
+client.unfocused         $color1 	$color1 	$color0 	$color1 	$color1
+client.urgent            $color5 	$color5 	$color0 	$color5 	$color5
 
 # Individual Window Options
 for_window [class="Terminator" instance="terminator" title="Terminator Preferences"] floating enable
@@ -248,6 +207,14 @@ for_window [class="Pavucontrol" instance="pavucontrol" title="Volume Control"] f
 for_window [class="Lxappearance" instance="lxappearance" title="Customise Look and Feel"] floating enable
 for_window [class="Qtconfig-qt4" instance="qtconfig-qt4" title="Qt Configuration"] floating enable
 for_window [class="VirtualBox Manager" instance="VirtualBox Manager" title="Oracle VM VirtualBox Manager"] floating enable
+for_window [class="Gnome-calculator" instance="gnome-calculator" title="Calculator" window_role="gnome-calculator"] floating enable
+# for_window [class="Code" instance="code" window_role="browser-window"] floating enable
+
+# Addition (2)
+# Create scratchpad and use (minus) key
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+for_window [class="Zim" instance="zim" title="Home - Zim"] move to scratchpad
 
 # Future Use
 # Using Templates

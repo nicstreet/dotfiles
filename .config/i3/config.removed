@@ -1,0 +1,25 @@
+# Pulse Audio Controls
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# bindsym $mod+control+equal exec --no-startup-id pactl set-sink-volume 0 +5
+# bindsym $mod+control+minus exec --no-startup-id pactl set-sink-volume 0 -5
+
+# Media Player Controls
+# bindsym XF86AudioPlay exec playerctl play
+# bindsym XF86AudioPause exec playerctl pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Keybinding - bindsym $mod+p exec system-config-printer
+bindsym $mod+n exec nm-connection-editor
+
+# Keybinding - bindsym $mod+p exec system-config-printer
+bindsym $mod+n exec nm-connection-editor
+
+# start dmenu (a program launcher)
+# bindsym $mod+d exec dmenu_run (uncomment to restore default i3 dmenu)
+

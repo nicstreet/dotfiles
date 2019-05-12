@@ -1,9 +1,9 @@
 * {
-    active-background: #ab4b0d;
-    active-foreground: @foreground;
+    active-background: #9D6F53;
+    active-foreground: #9d6f53;
     normal-background: @background;
     normal-foreground: @foreground;
-    urgent-background: #b4430e;
+    urgent-background: #9D6F53;
     urgent-foreground: @foreground;
 
     alternate-active-background: @background;
@@ -13,35 +13,35 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #b4430e;
-    selected-active-foreground: @foreground;
-    selected-normal-background: #ab4b0d;
-    selected-normal-foreground: @foreground;
-    selected-urgent-background: #c0580f;
+    selected-active-background: #9D6F53;
+    selected-active-foreground: @background;
+    selected-normal-background: #E3A51D;
+    selected-normal-foreground: @background;
+    selected-urgent-background: #B38A67;
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: #070303;
-    foreground: #f6cc77;
-    border-color: #eb8f13;
+    background: #140a06;
+    foreground: #e3dbd6;
+    border-color: #e3a51d;
     spacing: 2;
 }
 
 #window {
-    background-color: @border-color;
+    background-color: @background;
     border: 1;
-    padding: 0.25ch;
+    padding: 0ch;
 }
 
 #mainbox {
-    border: 0;
-    padding: 2;
+    border: 1;
+    padding: 0;
 }
 
 #message {
     border: 2px 0px 0px;
-    border-color: @foreground;
-    padding: 0px;
+    border-color: #e3a51d;
+    padding: 1px;
 }
 
 #textbox {
@@ -61,7 +61,7 @@
 
 #listview {
     fixed-height: 0;
-    border: 2px 0px 0px;
+    border: 1px 0px 0px;
     border-color: @border-color;
     spacing: 2px;
     scrollbar: true;
@@ -119,9 +119,9 @@
 }
 
 #scrollbar {
-    width: 4px;
+    width: 0px;
     border: 0;
-    handle-width: 8px;
+    handle-width: 0px;
     padding: 0;
 }
 

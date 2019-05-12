@@ -1,8 +1,8 @@
 # Custom .bashrc file
 #
 
-source .functions
-source .aliases
+source ~/.functions
+source ~/.aliases
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -121,8 +121,10 @@ fi
 #Custom
 neofetch
 
+PS1="\n\e[31m╔══╡\e[36m\t\e[31m╞═════╡\e[36m\!\e[31m╞═════╡\e[31m[\e[36m\u@\h\e[31m]\n\e[31m╚════╡\e[36m\w\e[37m # "
+
 # Load TMUX in every terminal
-case $- in *i*)
-   [ -z "$TMUX" ] && exec tmux
-esac
+#case $- in *i*)
+#   [ -z "$TMUX" ] && exec tmux
+#esac
 

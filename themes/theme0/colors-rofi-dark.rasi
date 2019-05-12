@@ -23,25 +23,25 @@
     background-color: @background;
     background: #070303;
     foreground: #f6cc77;
-    border-color: #eb8f13;
+    border-color: @background;
     spacing: 2;
 }
 
 #window {
-    background-color: @border-color;
-    border: 1;
-    padding: 0.25ch;
+    background-color: @background;
+    border: 0;
+    padding: 2.5ch;
 }
 
 #mainbox {
     border: 0;
-    padding: 2;
+    padding: 0;
 }
 
 #message {
     border: 2px 0px 0px;
-    border-color: @foreground;
-    padding: 0px;
+    border-color: @border-color;
+    padding: 1px;
 }
 
 #textbox {
