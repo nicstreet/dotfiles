@@ -6,4 +6,4 @@ alias l="ls -al --color"
 alias cls="clear"
 alias cd..="cd .."
 alias dir="ls -al --color"
-
+alias src="source ~/.bashrc"

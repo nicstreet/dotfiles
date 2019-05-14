@@ -119,9 +119,22 @@ fi
 
 
 #Custom
-neofetch
+#neofetch
+clear
+bash ~/scripts/ufetch.sh
 
-PS1="\n\e[31m╔══╡\e[36m\t\e[31m╞═════╡\e[36m\!\e[31m╞═════╡\e[31m[\e[36m\u@\h\e[31m]\n\e[31m╚════╡\e[36m\w\e[37m # "
+echo
+
+# PROMPT1 : Original 2 Line prompt
+# PS1="\n\e[31m╔══╡\e[36m\t\e[31m╞═════╡\e[36m\!\e[31m╞═════╡\e[31m[\e[36m\u@\h\e[31m]\r\n\e[31m╚════╡\e[36m\w\e[37m # "
+
+# PROMPT2 : Additonal 1 line prompt
+# PS1=" \[\e[37;42m\] [\!] \e[m\]\e[37;45m\] \A \e[m\]\e[37;42m\] \u\[\e[m\]\[\e[36;42m\]@\[\e[m\]\[\e[37;42m\]\h \[\e[m\]\[\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] # \e[m "
+
+# PROMPT3 : Short Version of prompt2 (History / Directory) Only
+PS1=" \[\e[37;44m\] [\!] \e[m\]\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] # \e[m "
+
+
 
 # Load TMUX in every terminal
 #case $- in *i*)
