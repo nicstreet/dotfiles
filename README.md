@@ -17,4 +17,8 @@ Just some simple `formatting` to test.
 	- dunst.sh
 	- cava.sh
 
+- [ ] Fix rofi Music Menu
+	- Mute not working
+	
+
 
