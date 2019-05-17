@@ -119,10 +119,14 @@ fi
 
 
 #Custom
-#neofetch
 clear
-bash ~/scripts/ufetch.sh
+neofetch
 
+# bash ~/scripts/ufetch.sh
+
+echo
+
+# echo " Wake up Nic ... it's time to 'Hack the Planet'" | pv -qL 10
 echo
 
 # PROMPT1 : Original 2 Line prompt
@@ -132,9 +136,9 @@ echo
 # PS1=" \[\e[37;42m\] [\!] \e[m\]\e[37;45m\] \A \e[m\]\e[37;42m\] \u\[\e[m\]\[\e[36;42m\]@\[\e[m\]\[\e[37;42m\]\h \[\e[m\]\[\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] # \e[m "
 
 # PROMPT3 : Short Version of prompt2 (History / Directory) Only
-PS1=" \[\e[37;44m\] [\!] \e[m\]\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] # \e[m "
+#PS1=" \[\e[37;44m\] [\!] \e[m\]\e[32;47m\] \w\[\e[m\]\[\e[37;44m\] # \e[m "
 
-
+PS1=" \[\e[37;44m\] \! \[\e[m\]\[\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] \043 \[\e[m\] "
 
 # Load TMUX in every terminal
 #case $- in *i*)

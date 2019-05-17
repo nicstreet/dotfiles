@@ -5,7 +5,7 @@
 # Install core applications and utilities
 apt-get -y install neofetch compton feh i3 xfce4-clipman deepin-screenshot terminator rofi htop cmatrix 
 apt-get -y install pavucontrol gdebi virtualbox virtualbox-dkms virtualbox-guest-additions-iso
-apt-get -y install cmus
+apt-get -y install cmus calibre lshw gotop
 
 # Install i3-gaps and other prerequisites
 
@@ -18,7 +18,16 @@ apt-get -y install libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf
 apt-get -y install lxappearance gtk-chtheme qt4-qtconfig
 
 # Required for Dunst
-apt-get -y install libnotify-bin
+apt-get -y install libnotify-bin dbus-1-dbg
+
+# Required for Sound
+apt-get -y install alsa-tools alsa-utils
+# Required for cava (Graphic Equaliser)
+
+apt-get -y install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
+
+#Required for (other)
+apt-get -y qml-module-qtquick-window2
 
 # Clone dotfiles git repository
 git clone https://github.com/nicstreet/dotfiles dotfiles

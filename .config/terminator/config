@@ -13,6 +13,7 @@
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = Monospace 9
+    foreground_color = "#e9b96e"
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True
