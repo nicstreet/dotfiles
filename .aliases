@@ -1,9 +1,23 @@
-alias home="cd ~"
-alias editi3="nano ~/.config/i3/config"
-alias editpoly="nano ~/.config/polybar/polybar.config"
-alias htb="openvpn ~/Dropbox/working/intersect.ovpn"
+# General
+alias dir="ls -al --color"
 alias l="ls -al --color"
 alias cls="clear"
+
+# Navigation
 alias cd..="cd .."
-alias dir="ls -al --color"
+alias home="cd ~"
+alias gotoscr="cd ~/Dropbox/working/scripts"
+alias gotowork="cd ~/Dropbox/working"
+
+# Editing
+alias editi3="nano ~/.config/i3/config"
+alias editpoly="nano ~/.config/polybar/polybar.config"
+alias editx="nano ~/.Xresources"
+alias editbash="nano ~/.bashrc"
+
+# Launch
+alias htb="openvpn ~/Dropbox/working/intersect.ovpn"
+
+# Reload
 alias src="source ~/.bashrc"
+

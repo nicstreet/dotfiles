@@ -32,7 +32,8 @@ font pango:monospace 8, FontAwesome, 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
+# bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
+bindsym $mod+Return exec --no-startup-id urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -78,7 +79,7 @@ bindsym $mod+a focus parent
 bindsym $mod+m exec "bash /$HOME/.config/i3/musicmenu.sh"
 
 # Launch Nautilus / Replicate Windows win+e
-bindsym $mod+e exec nautilus
+bindsym $mod+e exec --no-startup-id nautilus
 
 # Launch window rofi menu
 bindsym $mod1+Tab exec --no-startup-id "bash /$HOME/.config/i3/windowmenu.sh"
@@ -155,16 +156,19 @@ gaps outer 2
 gaps inner 14
 
 # Start applications on startup
-exec xfce4-clipman
-exec /usr/bin/compton --config /root/.config/compton.conf
-exec "terminator -g ~/.config/terminator/config -p streety"
-exec "terminator -g ~/.config/terminator/config -p streety"
-exec xfce-clipman
-exec ~/.dropbox-dist/dropboxd
-exec firefox
-exec zim
-exec "msfdb start"
-exec code --user-data-dir ~/Dropbox/working
+exec --no-startup-id xfce4-clipman
+exec --no-startup-id /usr/bin/compton --config /root/.config/compton.conf
+exec --no-startup-id urxvt
+exec --no-startup-id urxvt
+exec --no-startup-id xfce-clipman
+exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id firefox
+exec --no-startup-id zim
+exec --no-startup-id "msfdb start"
+exec --no-startup-id code --user-data-dir ~/Dropbox/working
+
+# exec "terminator -g ~/.config/terminator/config -p streety"
+# exec "terminator -g ~/.config/terminator/config -p streety"
 # exec nm-applet
 
 # Assign Applications to Workspaces
