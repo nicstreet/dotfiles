@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Capture the current clipboard
+BEFORE="$( xclip -o -selection clipboard )"
+
+rofi -modi "clipboard:greenclip print" -show clipboard -hide-scrollbar -line-padding 4 -padding 4 -lines 40 -font "Misc Termsyn 8" -width 30 -columns 1 -run-command '{cmd}'
+# rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+sleep 0.25
+
+# Capture the selection
+TEXT="$( xclip -o -selection clipboard )"
+
+# Only attempt to paste if there has been selection
+if [ "${TEXT}" != "${BEFORE}" ]; then
+  xdotool type "$TEXT"
+fi

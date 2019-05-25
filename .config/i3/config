@@ -17,29 +17,39 @@
 #              12th May 2019 - Tidy up - Non used configuration moved to config.removed
 #              17th May 2019 - Change back to URXVT (Copy n Paste fixed)
 #                            - Configured additional keybinding (win+e - Nautilus on W$7)
+#              18th May 2019 - Added in workspace config for Calibre e-reader
+#              19th May 2019 - Configured Gaps resize
+#                            - Configured behaviour for various window types
+#                            - Added greenclip to /usr/local/bin and added rofi shortcut mod+c
+#                            - Added Gnome Clipboard Manager and use bount to $mod+Print
+#                            - Reverted back to Terminator - URXVT issues  with unicode and awful clipboard integration
 
-# Addition (1)
-for_window [class="^.*"] border pixel 3
-
-# Set modifier as left Win key
+# Set modifier as left Win key | Configure Alt
 set $mod Mod4
+set $alt Mod1
+
+# workspace switching (Addition (3)
+bindsym $alt+Tab workspace back_and_forth
+workspace_auto_back_and_forth no
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8, FontAwesome, 8
+# font pango:monospace 18, FontAwesome, 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-# bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
-bindsym $mod+Return exec --no-startup-id urxvt
+# Bind terminal to win+return
+bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Configure rofi as dmenu replacement
-bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "Misc Termsyn 10" -width 36 -columns 4
+bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "Misc Termsyn 8" -width 30 -columns 3
+
+# Launch clipboard ROFI (greenclip)
+bindsym $mod+c exec ~/.config/i3/greenclip.sh
 
 # Keybinding
 # Change Focus using the cursor keys:
@@ -48,7 +58,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# alternatively, you can use the cursor keys:
+# Move window using the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -83,6 +93,43 @@ bindsym $mod+e exec --no-startup-id nautilus
 
 # Launch window rofi menu
 bindsym $mod1+Tab exec --no-startup-id "bash /$HOME/.config/i3/windowmenu.sh"
+
+set $mode_gaps [Gaps: (o) outer, (i) inner]
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # Declare variables for Workspaces
 set $ws1 "1"
@@ -134,7 +181,8 @@ bindsym $mod+ctrl+l exec i3lock
 bindsym $mod+r mode "resize"
 
 # Keybinding - PRINTSCREEN
-bindsym $mod+Print exec "deepin-screenshot -n"
+# bindsym $mod+Print exec "deepin-screenshot -n"
+bindsym $mod+Print exec "gnome-screenshot -i"
 
 # resize window (you can also use the mouse for that)
 # These bindings trigger as soon as you enter the resize mode
@@ -148,27 +196,36 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# Keybinding - Move NEXT or PREVIOUS Workspace
+bindsym $mod+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
+
+# Keybinding - Move Current Window to NEXT or PREVIOUS Workspace
+bindsym $mod+$alt+Left move container to workspace prev
+bindsym $mod+$alt+Right move container to workspace next
+
 # Wallpaper
 exec_always feh --bg-scale /root/.config/i3/wallpaper.jpeg
 
 # Configure gaops size
 gaps outer 2
-gaps inner 14
+gaps inner 20
 
 # Start applications on startup
-exec --no-startup-id xfce4-clipman
+#exec --no-startup-id xfce4-clipman
+exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/compton --config /root/.config/compton.conf
-exec --no-startup-id urxvt
-exec --no-startup-id urxvt
-exec --no-startup-id xfce-clipman
+#exec --no-startup-id urxvt
+#exec --no-startup-id urxvt
+#exec --no-startup-id xfce-clipman
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
 exec --no-startup-id "msfdb start"
 exec --no-startup-id code --user-data-dir ~/Dropbox/working
 
-# exec "terminator -g ~/.config/terminator/config -p streety"
-# exec "terminator -g ~/.config/terminator/config -p streety"
+exec "terminator -g ~/.config/terminator/config -p streety"
+exec "terminator -g ~/.config/terminator/config -p streety"
 # exec nm-applet
 
 # Assign Applications to Workspaces
@@ -179,7 +236,9 @@ assign [class="VirtualBox Manager"] $ws5
 assign [class="VirtualBox Machine"] $ws5
 assign [class="Nautilus"] $ws7
 assign [class="Zim"] $ws3
-assign [class="Code"] $ws4 
+assign [class="Code"] $ws4
+assign [class="calibre" instance="calibre-gui"] $ws3
+assign [class="calibre" instance="calibre-ebook-viewer"] $ws1
 
 # Set colours via variables using .Xresources
 set_from_resource $color0  i3wm.color0  #000000
@@ -199,15 +258,19 @@ set_from_resource $color13 i3wm.color13 #000000
 set_from_resource $color14 i3wm.color14 #000000
 set_from_resource $color15 i3wm.color15 #000000
 
-# Modified 22-04-2019 (Replace default bar with Polybar)
-exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
-
 # Window Colours and decorations
 # class                  border		backgr		text		indicator	child_border
 client.focused           $color6 	$color6 	$color0 	$color2 	$color6
 client.focused_inactive  $color1 	$color1 	$color0 	$color1 	$color1
 client.unfocused         $color1 	$color1 	$color0 	$color1 	$color1
 client.urgent            $color5 	$color5 	$color0 	$color5 	$color5
+
+# Modified 22-04-2019 (Replace default bar with Polybar)
+exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
+
+# Global Window Options
+# Addition (1)
+for_window [class="^.*"] border pixel 3
 
 # Individual Window Options
 for_window [class="Terminator" instance="terminator" title="Terminator Preferences"] floating enable
@@ -217,12 +280,22 @@ for_window [class="Lxappearance" instance="lxappearance" title="Customise Look a
 for_window [class="Qtconfig-qt4" instance="qtconfig-qt4" title="Qt Configuration"] floating enable
 for_window [class="VirtualBox Manager" instance="VirtualBox Manager" title="Oracle VM VirtualBox Manager"] floating enable
 for_window [class="Gnome-calculator" instance="gnome-calculator" title="Calculator" window_role="gnome-calculator"] floating enable
-# for_window [class="Code" instance="code" window_role="browser-window"] floating enable
+
+# Order for Burpsuite is important
+for_window [title=".*Community.*"] floating enable
+for_window [title=".*Temporary.*"] floating disable
+
+# Set behaviour for different window types
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
 
 # Addition (2)
 # Create scratchpad and use (minus) key
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $alt+Shift+grave move scratchpad
+bindsym $alt+grave scratchpad show
 for_window [class="Zim" instance="zim" title="Home - Zim"] move to scratchpad
 
 # Future Use

@@ -1,0 +1,5 @@
+===================================================================================
+python -c 'import pty; pty.spawn("/bin/bash")'
+echo $term & stty raw -echo & fg & reset
+python -m SimpleHTTPServer 80
+This is a test

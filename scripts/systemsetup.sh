@@ -6,7 +6,8 @@
 apt-get -y install neofetch compton feh i3 xfce4-clipman deepin-screenshot terminator rofi htop cmatrix 
 apt-get -y install pavucontrol gdebi virtualbox virtualbox-dkms virtualbox-guest-additions-iso
 apt-get -y install cmus calibre lshw gotop
-
+# Require for Greenclip
+apt-get -y install xdotool
 # Install i3-gaps and other prerequisites
 
 #Required for i3gaps
@@ -48,7 +49,6 @@ ln -sv ~/dotfiles/.config/rofi/ ~/.config/
 ln -sv ~/dotfiles/.config/terminator/ ~/.config/
 ln -sv ~/dotfiles/.config/zim/ ~/.config/
 
-
 # Update and Upgrade
 apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
 
@@ -69,6 +69,14 @@ cd build
 make
 sudo make install
 
+# Install greenclip
+cd /usr/local/bin
+wget https://github.com/erebe/greenclip/releases/download/3.2/greenclip
+chmod +x /usr/local/bin/greenclip
+
+# Install additional fonts
+cd /usr/share/fonts/truetype
+git clone https://github.com/AppleDesignResources/SanFranciscoFont
 
 
 # To be added:

@@ -1,9 +1,12 @@
 [global_config]
+  borderless = True
   extra_styling = False
-  tab_position = hidden
+  tab_position = bottom
   broadcast_default = off
   scroll_tabbar = True
   homogeneous_tabbar = False
+  title_receive_bg_color = "#ce5c00"
+  title_inactive_bg_color = "#e9b96e"
 [keybindings]
 [profiles]
   [[default]]

@@ -20,4 +20,4 @@ alias htb="openvpn ~/Dropbox/working/intersect.ovpn"
 
 # Reload
 alias src="source ~/.bashrc"
-
+alias xr="xrdb ~/.Xresources"

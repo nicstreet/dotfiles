@@ -13,10 +13,11 @@
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = Monospace 9
+    foreground_color = "#e9b96e"
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True
-    palette = "#070303:#b4430e:#ab4b0d:#c0580f:#d76b11:#c28f0f:#eb8f13:#f6cc77:#ac8e53:#b4430e:#ab4b0d:#c0580f:#d76b11:#c28f0f:#eb8f13:#f6cc77"
+    palette = "#0c0f19:#0B506B:#80575D:#21569B:#4E4DA5:#5953A4:#A859B4:#8ec9d3:#638c93:#0B506B:#80575D:#21569B:#4E4DA5:#5953A4:#A859B4:#8ec9d3"
     use_system_font = False
 [layouts]
   [[default]]

@@ -3,7 +3,7 @@
 #!rofi.color-active: argb: EE000000, argb: EE000000, argb: EE000000
 rofi.theme: /root/.config/rofi/colors-rofi-dark.rasi
 -hide-scrollbar
--font "mono 16"
+-font "mono 12"
 #rofi -show run -modi run -location 1 -width 80 \
 #		 -lines 2 -line-margin 0 -line-padding 1 \
 #		 -separator-style none -font "mono 11" -columns 9 -bw 0 \
