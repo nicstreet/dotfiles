@@ -74,9 +74,36 @@ cd /usr/local/bin
 wget https://github.com/erebe/greenclip/releases/download/3.2/greenclip
 chmod +x /usr/local/bin/greenclip
 
+# Install cava - Music Visualizer
+apt-get -y install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
+cd ~/apps
+git clone https://github.com/karlstav/cava
+cd cava
+bash autogen.sh
+./configure
+make
+make install
+
+# Install dunst
+apt-get -y install dbus libxinerama1 libxrandr2 libxss1 glib pango cairo libgtk-3-dev
+apt-get -y install libpango-1.0-0
+
+# Move to the /apps folder
+cd ~/apps
+
+# Clone from git and then make / install
+git clone https://github.com/dunst-project/dunst.git
+cd dunst
+make
+sudo make install
+
 # Install additional fonts
 cd /usr/share/fonts/truetype
 git clone https://github.com/AppleDesignResources/SanFranciscoFont
+
+# Copy required files into directories
+# Dunst icons
+cp -a ~/dotfiles/icons/* /usr/share/icons/gnome/16x16/status/
 
 
 # To be added:

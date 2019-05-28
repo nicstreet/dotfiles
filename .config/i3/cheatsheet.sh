@@ -1,0 +1,200 @@
+#!/usr/bin/env bash
+#---------------------------------------------------------------------------
+#--                                                                       --
+#--
+#--    _|_|_|      _|_|_|  _|    _|    _|_|_|  _|_|_|_|_|
+#--    _|    _|  _|        _|    _|  _|            _|
+#--    _|_|_|    _|        _|_|_|_|    _|_|        _|
+#--    _|    _|  _|        _|    _|        _|      _|
+#--    _|    _|    _|_|_|  _|    _|  _|_|_|        _|
+#--                                                                       --
+#---------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------
+#-- TODO
+#---------------------------------------------------------------------------
+
+# GENERAL
+# * Add .chst item
+# * Delete .chst item
+# * Edit .chst item
+# * Add .chst
+# * Add support for input+key & input+type
+# * Add list filtering by .chst file == primary category (maybe with tab)
+# * Add rchst dotfile
+
+# NON CHST SPECIFIC
+# *
+
+# ACTIVE
+
+
+# DEFER (should do but uncertain how to solve after initial cursory review, so will defer till have more time to research)
+# *
+
+#DONE
+# * Fix tabulation after the command - spacing between end of command and description is not fixed
+# * Priotitize personal chst files loading ( ~/.pchst ) over general ( ~/.chst )
+
+# TESTED/REJECTED/WONTFIX
+
+
+
+CHTS_DIRECTORY=~/dotfiles/cheats
+CHTS_FILES=.chst
+PERSONAL_CHTS_FILES=.pchst
+
+ACTION_KEY=key
+ACTION_TYPE=type
+ACTION_INPUT_KEY=input+key
+ACTION_INPUT_TYPE=input+type
+#RCHST_DOTFILE=~/.rchst
+
+# if [ -f "$RCHST_DOTFILE" ]
+# then
+#  . $RCHST_DOTFILE
+# fi
+
+
+
+# Remove font
+# rofi -i -font "ypn envypn 13"
+
+run_rofi () {
+	rofi -i -separator-style none -columns 1 -bw 0 \
+       -line-margin 0 -line-padding 2 \
+      -hide-scrollbar \
+      -color-window "#222222, #222222, #b1b4b3" \
+      -color-normal "#262626, #b1b4b3, #262626, #262626, #42E66C" \
+      -color-active "#222222, #E356A7, #222222, #007763, #b1b4b3" \
+      -color-urgent "#222222, #b1b4b3, #222222, #77003d, #b1b4b3" \
+      -kb-row-select "Tab" -kb-row-tab "" \
+    -font "Monospace 8" -lines 15 -width 750 -dmenu -p "> " "$@"
+
+
+}
+
+addCht () {
+	category=$(xsel | head -n1 | run_rofi -mesg "Insert primary category (cheatsheet file)")
+	if [[ $? -eq 1 ]]; then
+		exit
+	fi
+	subcategory=$(run_rofi -mesg "Insert subcategory")
+	if [[ $? -eq 1 ]]; then
+		exit
+	fi
+
+	command=$(run_rofi -mesg "Insert key combinantion or command")
+	if [[ $? -eq 1 ]]; then
+		exit
+	fi
+
+	description=$(run_rofi -mesg "Insert short description")
+	if [[ $? -eq 1 ]]; then
+		exit
+	fi
+
+	action=$(run_rofi -mesg "Insert action type (key or type)")            =|= input+type
+	if [[ $? -eq 1 ]]; then
+		exit
+
+	fi
+
+ run_rofi -mesg "Following item will be added: $category $subcategory $command $description $action"
+
+}
+
+
+delete () {
+	number=$1
+}
+
+edit () {
+	id=$(echo $1 | tr '.' '\n' | head -n1)
+}
+
+triggerChtAction () {
+	selection=$1
+  chts_raw=$2
+
+	cht_id=$(echo $selection | grep -o -E '[0-9]+' | head -1 | sed -e 's/^0\+//')
+
+	sellected_action=$(echo ${chts_raw[$cht_id]} | awk -F'[=][|][=]' '{ print $5 }' |  awk '{$1=$1};1')
+	sellected_command=$(echo ${chts_raw[$cht_id]} | awk -F'[=][|][=]' '{ print $3 }' |  awk '{$1=$1};1')
+
+	if [[ "$sellected_action" == *$ACTION_KEY* ]]; then
+		xdotool $ACTION_KEY --clearmodifiers "$sellected_command";
+	elif [[ "$sellected_action" == *$ACTION_TYPE* ]]; then
+		xdotool $ACTION_TYPE "$sellected_command";
+	fi
+}
+
+main () {
+declare -a chts_raw=()
+declare -a chts_files=()
+
+#!/usr/bin/env bash
+# CHTS_DIRECTORY=~/
+# CHTS_FILES=.chst/*
+# PERSONAL_CHTS_FILES=.pchst/*
+
+for f in $CHTS_DIRECTORY/{$PERSONAL_CHTS_FILES,$CHTS_FILES}/*
+do
+	declare -a chts_tmp=()
+	if  ! { [[ "$f" == *"LICENSE"* ]] || [[ "$f" == *"README"* ]] || [[ "$f" == *"\."* ]] ; }  then
+    fileName=$(basename -- "$f")
+		inarray=$(echo ${chts_files[@]} | grep -o $fileName | wc -l)
+		if [[ $inarray -eq 0 ]]; then
+			chts_files+=($fileName)
+			readarray -t chts_tmp < $f
+			#readarray -t chts_tmp < <(echo "$f" | grep '^\s*$')
+		fi
+	fi
+	chts_raw=("${chts_raw[@]}" "${chts_tmp[@]}")
+done
+
+# Remove emtpy lines
+for i in "${!chts_raw[@]}"; do
+		if  [[ -z "${chts_raw[$i]}" ]]; then
+			unset chts_raw[$i]
+		fi
+done
+
+# Add global indexing (for all the chst)
+for i in "${!chts_raw[@]}"; do
+	chts_output_tmp=$chts_output_tmp"\n"${i}"=|="${chts_raw[$i]}
+done
+
+selection=$(echo -e $chts_output_tmp   |  sed -e 's_=|=_\t_g' |  awk -F"\t" '{printf "%.10s\t  %.20s\t %.20s\t %.80s\t %.90s\t \n", $1,$2,$3,$4,$5}'| column -s $'\t' -t | run_rofi -kb-custom-1 "${new_chst}" -kb-custom-2 "${list_chst_subcat}" -kb-custom-3 "${delete_chst}" -kb-custom-4 "${edit_chst}")
+
+#-mesg "Enter to select a chst item. Alt+n to create a new one. Edit a chst item with Alt+e. Remove one with Alt+d. Search for subcatgories with Alt+t."
+
+val=$?
+
+	if [[ $val -eq 1 ]]; then
+		exit
+	elif [[ $val -eq 10 ]]; then
+		addCht
+	elif [[ $val -eq 11 ]]; then
+		listTags
+	elif [[ $val -eq 12 ]]; then
+		delete $selection
+	elif [[ $val -eq 13 ]]; then
+		edit $selection
+	else
+		triggerChtAction $selection $chts_raw
+	fi
+
+
+
+}
+
+
+#shortcuts
+new_chst="Alt+n"
+list_chst_subcat="Alt+t"
+delete_chst="Alt+d"
+edit_chst="Alt+e"
+
+
+main

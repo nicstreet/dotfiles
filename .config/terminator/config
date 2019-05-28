@@ -8,6 +8,8 @@
   title_receive_bg_color = "#ce5c00"
   title_inactive_bg_color = "#e9b96e"
 [keybindings]
+  edit_window_title = <Primary><Alt>a
+  edit_tab_title = <Primary><Alt>w
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"

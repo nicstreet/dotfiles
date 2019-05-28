@@ -8,6 +8,7 @@ alias cd..="cd .."
 alias home="cd ~"
 alias gotoscr="cd ~/Dropbox/working/scripts"
 alias gotowork="cd ~/Dropbox/working"
+alias gotodown="cd ~/Downloads"
 
 # Editing
 alias editi3="nano ~/.config/i3/config"
@@ -16,8 +17,13 @@ alias editx="nano ~/.Xresources"
 alias editbash="nano ~/.bashrc"
 
 # Launch
-alias htb="openvpn ~/Dropbox/working/intersect.ovpn"
+alias htb="~/.config/scripts/htbvpn.sh"
 
 # Reload
 alias src="source ~/.bashrc"
 alias xr="xrdb ~/.Xresources"
+
+# Pentest
+alias ws="~/scripts/simplehttpserver.sh"
+alias killws="pgrep python | xargs kill"
+alias msf="msfconsole"

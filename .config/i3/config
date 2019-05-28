@@ -23,6 +23,8 @@
 #                            - Added greenclip to /usr/local/bin and added rofi shortcut mod+c
 #                            - Added Gnome Clipboard Manager and use bount to $mod+Print
 #                            - Reverted back to Terminator - URXVT issues  with unicode and awful clipboard integration
+#              28rh May 2019 - Added bindings for rofi USAGE display, INFORMATION menu, OPTIONS menu POWER menu (u i o p respectively)
+#                            - Commented out some unused configuration.
 
 # Set modifier as left Win key | Configure Alt
 set $mod Mod4
@@ -47,6 +49,18 @@ bindsym $mod+Shift+q kill
 
 # Configure rofi as dmenu replacement
 bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "Misc Termsyn 8" -width 30 -columns 3
+
+# Display rofi - CheatSheets
+bindsym $mod+i exec ~/.config/i3/cheatsheet.sh
+
+# Display System Information (usage) via Dunst
+bindsym $mod+u exec ~/.config/i3/sysinfo.sh
+
+# Launch rofi - Power Menu
+bindsym $mod+p exec ~/.config/i3/powermenu.sh
+
+# Launch rofi - Options Menu
+bindsym $mod+o exec ~/.config/i3/optionmenu.sh
 
 # Launch clipboard ROFI (greenclip)
 bindsym $mod+c exec ~/.config/i3/greenclip.sh
@@ -207,25 +221,25 @@ bindsym $mod+$alt+Right move container to workspace next
 # Wallpaper
 exec_always feh --bg-scale /root/.config/i3/wallpaper.jpeg
 
-# Configure gaops size
+# Configure gaps size
 gaps outer 2
-gaps inner 20
+gaps inner 14
 
 # Start applications on startup
-#exec --no-startup-id xfce4-clipman
+
 exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/compton --config /root/.config/compton.conf
-#exec --no-startup-id urxvt
-#exec --no-startup-id urxvt
-#exec --no-startup-id xfce-clipman
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
 exec --no-startup-id "msfdb start"
 exec --no-startup-id code --user-data-dir ~/Dropbox/working
-
 exec "terminator -g ~/.config/terminator/config -p streety"
 exec "terminator -g ~/.config/terminator/config -p streety"
+#exec --no-startup-id xfce4-clipman
+#exec --no-startup-id urxvt
+#exec --no-startup-id urxvt
+#exec --no-startup-id xfce-clipman
 # exec nm-applet
 
 # Assign Applications to Workspaces

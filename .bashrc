@@ -142,3 +142,7 @@ PS1=" \[\e[37;44m\] \! \[\e[m\]\[\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] \043 \[\e[
 #   [ -z "$TMUX" ] && exec tmux
 #esac
 
+function title()
+{
+   echo -en "\e]2;$1\a"
+}

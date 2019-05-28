@@ -1,5 +1,5 @@
 [global]
-    font = Noto Mono 10
+    font = San Francisco Display 10
     allow_markup = yes
     # Original format = "<b>%a:</b> %% %s\n%b"
     format = "%s\n%b"
@@ -108,17 +108,17 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#f6cc77"
-    foreground = "#d76b11"
+    foreground = "#e96a00"
     timeout = 10
 
 [urgency_normal]
     background = "#f6cc77"
-    foreground = "#c28f0f"
+    foreground = "#e96a00"
     timeout = 10
 
 [urgency_critical]
-    background = "#f6cc77"
-    foreground = "#b4430e"
+    background = "#b64903"
+    foreground = "#f6cc77"
     timeout = 0
 
 #[ignore]
