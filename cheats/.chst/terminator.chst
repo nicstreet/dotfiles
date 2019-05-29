@@ -1,0 +1,7 @@
+Terminator	=|= General		=|= Control_L+Shift_L+o		=|= Split console horizontally		=|= key
+Terminator	=|= General		=|= Control_L+Shift_L+e		=|= Split console vertically		=|= key
+Terminator	=|= General		=|= Control_L+Shift_L+t		=|= New Terminator TAB			=|= key
+Terminator	=|= General		=|= Control_L+Shift_L+w		=|= Close Terminator TAB		=|= key
+Terminator	=|= General		=|= Control_L+Alt_L+w		=|= Rename Terminator TAB		=|= key
+Terminator	=|= General		=|= Control_L+Prior		=|= Previous TAB			=|= key
+Terminator	=|= General		=|= Control_L+Next		=|= Next TAB				=|= key

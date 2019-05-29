@@ -249,10 +249,11 @@ assign [class="Cherrytree"] $ws3
 assign [class="VirtualBox Manager"] $ws5
 assign [class="VirtualBox Machine"] $ws5
 assign [class="Nautilus"] $ws7
-assign [class="Zim"] $ws3
 assign [class="Code"] $ws4
 assign [class="calibre" instance="calibre-gui"] $ws3
 assign [class="calibre" instance="calibre-ebook-viewer"] $ws1
+
+assign [class="Zim"] $ws3
 
 # Set colours via variables using .Xresources
 set_from_resource $color0  i3wm.color0  #000000
@@ -298,6 +299,10 @@ for_window [class="Gnome-calculator" instance="gnome-calculator" title="Calculat
 # Order for Burpsuite is important
 for_window [title=".*Community.*"] floating enable
 for_window [title=".*Temporary.*"] floating disable
+
+# Move Zim preferences to current Workspace.
+for_window [class="Zim" instance="zim" title="Preferences - Zim"] move window to workspace current
+for_window [class="Zim" instance="zim" title="Properties - Zim"] move window to workspace current
 
 # Set behaviour for different window types
 for_window [window_role="pop-up"] floating enable

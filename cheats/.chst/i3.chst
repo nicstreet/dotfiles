@@ -15,8 +15,9 @@ i3-gaps =|=		Custom =|=	Super_L+[c]			=|=	Display rofi COPY \ PASTE menu (greenm
 i3-gaps =|=		Custom =|=	Super_L+[d]			=|=	Display rofi APPLICATION menu					=|=	key
 i3-gaps =|=		Custom =|=	Super_L+[m]			=|=	Display rofi MUSIC menu						=|=	key
 i3-gaps =|=		Custom =|=	Super_L+[PrtScr]		=|=	Launch Gnome Screenshot Manager					=|=	key
+i3-gaps =|=		Custom =|=	Super_L+[PrtScr]		=|=	Launch Gnome Screenshot Manager					=|=	key
 i3-gaps =|=		Layout =|=	Super_L+[e]			=|=	Launch Nautilus / File Manager					=|=	key
-i3-gaps =|=		Layout =|=	Super_L+[Esc]			=|=	Display rofi Window Menu					=|=	key
+i3-gaps =|=		Layout =|=	Alt+Grave			=|=	Display rofi Window Menu					=|=	key
 i3-gaps =|=		Window =|=	Super_L+[Left]			=|=	Focus Window Left						=|=	key
 i3-gaps =|=		Window =|=	Super_L+[Right			=|=	Focus Window Right						=|=	key
 i3-gaps =|=		Window =|=	Super_L+[Up]			=|=	Focus Window Up							=|=	key

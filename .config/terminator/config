@@ -6,7 +6,7 @@
   scroll_tabbar = True
   homogeneous_tabbar = False
   title_receive_bg_color = "#ce5c00"
-  title_inactive_bg_color = "#e9b96e"
+  title_inactive_bg_color = "#ce5c00"
 [keybindings]
   edit_window_title = <Primary><Alt>a
   edit_tab_title = <Primary><Alt>w

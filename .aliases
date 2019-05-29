@@ -1,4 +1,4 @@
-# General
+## General
 alias dir="ls -al --color"
 alias l="ls -al --color"
 alias cls="clear"
@@ -9,6 +9,8 @@ alias home="cd ~"
 alias gotoscr="cd ~/Dropbox/working/scripts"
 alias gotowork="cd ~/Dropbox/working"
 alias gotodown="cd ~/Downloads"
+alias gotocheats="cd ~/dotfiles/cheats/.chst"
+alias ~="cd ~"
 
 # Editing
 alias editi3="nano ~/.config/i3/config"
@@ -17,7 +19,7 @@ alias editx="nano ~/.Xresources"
 alias editbash="nano ~/.bashrc"
 
 # Launch
-alias htb="~/.config/scripts/htbvpn.sh"
+alias htb="~/scripts/htbvpn.sh"
 
 # Reload
 alias src="source ~/.bashrc"
