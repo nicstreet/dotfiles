@@ -1,5 +1,5 @@
-git		=|= Step1		=|= cd to appropriate folder		=|= Change to folder					=|=
-git		=|= Step2		=|= git status				=|= Check current repository status			=|=
-git		=|= Step3		=|= git add .				=|= Add all files that are new / modified		=|=
-git		=|= Step4		=|= git commit -m {title} {date}	=|= Commit all changes with detailed info		=|=
-git		=|= Step5		=|= git push origin master		=|= Push changes, prompted for username / password	=|=
+git		=|= Step1		=|= cd to appropriate folder		=|= Change to folder				            	=|= type
+git		=|= Step2		=|= git status				        =|= Check current repository status			        =|= type
+git		=|= Step3		=|= git add .				        =|= Add all files that are new / modified	    	=|= type
+git		=|= Step4		=|= git commit -m {title} {date}	=|= Commit all changes with detailed info	        =|= type
+git		=|= Step5		=|= git push origin master		    =|= Push changes, prompted for username / password	=|= type
