@@ -1,5 +1,5 @@
 * {
-    active-background: #b64903;
+    active-background: #ab4b0d;
     active-foreground: @foreground;
     normal-background: @background;
     normal-foreground: @foreground;
@@ -21,16 +21,16 @@
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: #f6cc77;
-    foreground: #070303;
-    border-color: @active-background;
+    background: #070303;
+    foreground: #f6cc77;
+    border-color: @background;
     spacing: 2;
 }
 
 #window {
     background-color: @background;
-    border: 2;
-    padding: 0.5ch;
+    border: 0;
+    padding: 2.5ch;
 }
 
 #mainbox {
@@ -119,9 +119,9 @@
 }
 
 #scrollbar {
-    width: 0px;
+    width: 4px;
     border: 0;
-    handle-width: 0px;
+    handle-width: 8px;
     padding: 0;
 }
 

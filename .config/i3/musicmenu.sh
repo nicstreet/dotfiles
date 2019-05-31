@@ -2,7 +2,7 @@
 
 ## Created By Nic Street
 
-MENU="$(rofi -sep "|" -dmenu -i -p 'Music Controls' -location 2 -yoffset 32 -xoffset 10 -width 12 -hide-scrollbar -line-padding 4 -padding 20 -line-margin 2 -lines 7 -font "Misc Termsyn 8" <<< " Play| Pause| Next| Previous| Shuffle| Repeat| Toggle_Mute|")"
+MENU="$(rofi -sep "|" -dmenu -i -p 'Music Controls' -location 0 -yoffset 32 -xoffset 10 -width 12 -hide-scrollbar -line-padding 4 -padding 20 -line-margin 2 -lines 7 -font "San Francisco Display Medium 10" <<< "Play|Pause|Next|Previous|Shuffle|Repeat|Toggle_Mute|")"
             case "$MENU" in
                 *Play) cmus-remote --play;;
                 *Pause) cmus-remote --pause;;

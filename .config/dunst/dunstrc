@@ -14,7 +14,7 @@
     indicate_hidden = yes
 
     # alignment of message text. Possible values are "left", "center" and "right"
-    alignment = left
+    alignment = center
 
     # The frequency with wich text that is longer than the notification. Window allows bounces back and forth.
     # This option conflicts with 'word_wrap'. Set to 0 to disable
@@ -30,7 +30,8 @@
     ignore_newline = no
 
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
-    geometry = "300x10-30+30"
+    #geometry = "300x10-30+30"
+    geometry = "300x10-1130+30"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -108,13 +109,14 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#f6cc77"
-    foreground = "#e96a00"
-    timeout = 10
+    foreground = "#b64903"
+    timeout = 4
 
 [urgency_normal]
     background = "#f6cc77"
     foreground = "#e96a00"
-    timeout = 10
+    timeout = 8
+    alignment = left
 
 [urgency_critical]
     background = "#b64903"

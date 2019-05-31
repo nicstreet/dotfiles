@@ -48,7 +48,10 @@ bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
 bindsym $mod+Shift+q kill
 
 # Configure rofi as dmenu replacement
-bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "Misc Termsyn 8" -width 30 -columns 3
+bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "San Francisco Display Medium 10" -width 30 -columns 3
+
+# Display Time via Dunst
+bindsym $mod+y exec ~/.config/i3/time.sh
 
 # Display rofi - CheatSheets
 bindsym $mod+i exec ~/.config/i3/cheatsheet.sh
@@ -106,7 +109,7 @@ bindsym $mod+m exec "bash /$HOME/.config/i3/musicmenu.sh"
 bindsym $mod+e exec --no-startup-id nautilus
 
 # Launch window rofi menu
-bindsym $mod1+Tab exec --no-startup-id "bash /$HOME/.config/i3/windowmenu.sh"
+bindsym $mod+Tab exec --no-startup-id "bash /$HOME/.config/i3/windowmenu.sh"
 
 set $mode_gaps [Gaps: (o) outer, (i) inner]
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -281,7 +284,7 @@ client.unfocused         $color1 	$color1 	$color0 	$color1 	$color1
 client.urgent            $color5 	$color5 	$color0 	$color5 	$color5
 
 # Modified 22-04-2019 (Replace default bar with Polybar)
-exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
+# exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
 
 # Global Window Options
 # Addition (1)
