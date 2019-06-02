@@ -30,7 +30,7 @@
 #window {
     background-color: @background;
     border: 2;
-    padding: 0.5ch;
+    padding: 0.25ch;
 }
 
 #mainbox {
@@ -39,7 +39,7 @@
 }
 
 #message {
-    border: 2px 0px 0px;
+    border: 2px 2px 2px;
     border-color: @border-color;
     padding: 1px;
 }

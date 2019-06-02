@@ -1,12 +1,12 @@
-tmux		=|= Shortcuts		=|= Control_L+b	c		=|= New Session					=|=
-tmux		=|= Shortcuts		=|= Control_L+b p		=|= Previous Session				=|=
-tmux		=|= Shortcuts		=|= Control_L+b n		=|= Next Session				=|=
-tmux		=|= Shortcuts		=|= Control_L+b Left		=|= Previous Session				=|=
+tmux		=|= Shortcuts		=|= Control_L+b	c		    =|= New Session					=|=
+tmux		=|= Shortcuts		=|= Control_L+b p		    =|= Previous Session			=|=
+tmux		=|= Shortcuts		=|= Control_L+b n		    =|= Next Session				=|=
+tmux		=|= Shortcuts		=|= Control_L+b Left		=|= Previous Session			=|=
 tmux		=|= Shortcuts		=|= Control_L+b Right		=|= Next Session				=|=
 tmux		=|= Shortcuts		=|= Control_L+b , (comma)	=|= Rename Session				=|=
-tmux		=|= Shortcuts		=|= Control_L+b w		=|= List Sessions				=|=
-tmux		=|= Shortcuts		=|= Control_L+b x		=|= Kill Pane					=|=
-tmux		=|= Shortcuts		=|= Control_L+b &		=|= Kill Window					=|=
-tmux		=|= Shortcuts		=|= Control_L+b t		=|= Big Clock					=|=
-tmux		=|= Shortcuts		=|= Control_L+b d		=|= Detach from session				=|=
+tmux		=|= Shortcuts		=|= Control_L+b w		    =|= List Sessions				=|=
+tmux		=|= Shortcuts		=|= Control_L+b x	    	=|= Kill Pane					=|=
+tmux		=|= Shortcuts		=|= Control_L+b &		    =|= Kill Window					=|=
+tmux		=|= Shortcuts		=|= Control_L+b t   		=|= Big Clock					=|=
+tmux		=|= Shortcuts		=|= Control_L+b d	    	=|= Detach from session			=|=
 tmux		=|= Shortcuts		=|= Control_L+b : (colon)	=|= Break pane					=|=

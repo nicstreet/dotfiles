@@ -1,44 +1,44 @@
-i3-gaps =|=		Standard =|=	Super_L+Enter			=|=	Launch terminal window						=|=	key
-i3-gaps =|=		Standard =|=	Super_L+Ctrl+[l]		=|=	Lock session							=|=	key
-i3-gaps =|=		Standard =|=	Super_L+Shift+[r]		=|=	Reload configuration file					=|=	key
-i3-gaps =|=		Workspace =|=	Super_L+[n]			=|=	Go to workspace [n]						=|=	key
-i3-gaps =|=		Workspace =|=	Super_L+Shift+[n]		=|=	Move Window to workspace [n]					=|=	key
-i3-gaps =|=		Workspace =|=	Super_L+Ctrl+[Left]		=|=	Move to workspace Left						=|=	key
-i3-gaps =|=		Workspace =|=	Super_L+Ctrl+[Right]		=|=	Move to workspace Right						=|=	key
-i3-gaps =|=		Workspace =|=	Super_L+Alt+[Left]		=|=	Move window to workspace Left					=|=	key
-i3-gaps =|=		Workspace =|=	Super_L+Alt+[Right]		=|=	Move window to workspace Right					=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[u]			=|=	Display Usage information (Dunst)				=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[i]			=|=	Display rofi CHEATSHEET menu					=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[o]			=|=	Display rofi OPTIONS menu					=|=	key
-i3-gaps =|=		Custom =|=	Super_L+p			=|=	Display rofi POWER menu						=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[c]			=|=	Display rofi COPY \ PASTE menu (greenmenu)			=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[d]			=|=	Display rofi APPLICATION menu					=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[m]			=|=	Display rofi MUSIC menu						=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[PrtScr]		=|=	Launch Gnome Screenshot Manager					=|=	key
-i3-gaps =|=		Custom =|=	Super_L+[PrtScr]		=|=	Launch Gnome Screenshot Manager					=|=	key
-i3-gaps =|=		Layout =|=	Super_L+[e]			=|=	Launch Nautilus / File Manager					=|=	key
-i3-gaps =|=		Layout =|=	Alt+Grave			=|=	Display rofi Window Menu					=|=	key
-i3-gaps =|=		Window =|=	Super_L+[Left]			=|=	Focus Window Left						=|=	key
-i3-gaps =|=		Window =|=	Super_L+[Right			=|=	Focus Window Right						=|=	key
-i3-gaps =|=		Window =|=	Super_L+[Up]			=|=	Focus Window Up							=|=	key
-i3-gaps =|=		Window =|=	Super_L+[Down]			=|=	Focus Window Down						=|=	key
-i3-gaps =|=		Window =|=	Super_L+[h]			=|=	Set split to horizontal						=|=	key
-i3-gaps =|=		Window =|=	Super_L+[v]			=|=	Set split to vertical						=|=	key
-i3-gaps =|=		Window =|=	Super_L+[f]			=|=	Fullscreen toggle						=|=	key
-i3-gaps =|=		Window =|=	Super_L+Shift+[Left]		=|=	Move Window Left						=|=	key
-i3-gaps =|=		Window =|=	Super_L+Shift+[Right		=|=	Move Window Right						=|=	key
-i3-gaps =|=		Window =|=	Super_L+Shift+[Up]		=|=	Move Window Up							=|=	key
-i3-gaps =|=		Window =|=	Super_L+Shift+[Down]		=|=	Move Window Down						=|=	key
-i3-gaps =|=		Window =|=	Super_L+Shift+[q]		=|=	Kill selected Window						=|=	key
-i3-gaps =|=		Window =|=	Super_L+[r]			=|=	Resize selected Window (Left/Right/Up/Down/Esc)			=|=	key
-i3-gaps =|=		Layout =|=	Super_L+[s]			=|=	Layout STACKED							=|=	key
-i3-gaps =|=		Layout =|=	Super_L+[w]			=|=	Layout TABBED							=|=	key
-i3-gaps =|=		Layout =|=	Super_L+[t]			=|=	Layout TOGGLE SPLIT						=|=	key
-i3-gaps =|=		Layout =|=	Super_L+Shift+[Space]		=|=	Toggle floating							=|=	key
-i3-gaps =|=		Layout =|=	Super_L+[a]			=|=	Focus Parent							=|=	key
-i3-gaps =|=		Layout =|=	Super_L+Shift+[g]		=|=	Configure windows gaps (i=inner / o=outer)			=|=	key
-i3-gaps =|=		Layout =|=	Super_L+Shift+[g]		=|=	Configure Outer gaps (i=inner) [Shift]+[+] or [-] or [0]	=|=	key
-i3-gaps =|=		Layout =|=	Super_L+Shift+[g]		=|=	Configure Inner gaps (o=outer) [Shift]+[+] or [-] or [0]	=|=	key
+i3-gaps =|=		Standard =|=	Super_L+Enter			=|=	Launch terminal window			            	    		=|=	key
+i3-gaps =|=		Standard =|=	Super_L+Ctrl+[l]		=|=	Lock session					                     		=|=	key
+i3-gaps =|=		Standard =|=	Super_L+Shift+[r]		=|=	Reload configuration file		            	    		=|=	key
+i3-gaps =|=		Workspace =|=	Super_L+[n]			    =|=	Go to workspace [n]				                    		=|=	key
+i3-gaps =|=		Workspace =|=	Super_L+Shift+[n]		=|=	Move Window to workspace [n]	           		    		=|=	key
+i3-gaps =|=		Workspace =|=	Super_L+Ctrl+[Left]		=|=	Move to workspace Left			    	             		=|=	key
+i3-gaps =|=		Workspace =|=	Super_L+Ctrl+[Right]	=|=	Move to workspace Right			            	    		=|=	key
+i3-gaps =|=		Workspace =|=	Super_L+Alt+[Left]		=|=	Move window to workspace Left	        		    		=|=	key
+i3-gaps =|=		Workspace =|=	Super_L+Alt+[Right]		=|=	Move window to workspace Right		        	    		=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[u]		    	=|=	Display Usage information (Dunst)	        	    		=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[i]		    	=|=	Display rofi CHEATSHEET menu		        	    		=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[o]		    	=|=	Display rofi OPTIONS menu			                		=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+p		    	=|=	Display rofi POWER menu				                		=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[c]		    	=|=	Display rofi COPY \ PASTE menu (greenmenu)	        		=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[d]		    	=|=	Display rofi APPLICATION menu				            	=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[m]		    	=|=	Display rofi MUSIC menu					                	=|=	key
+i3-gaps =|=		Custom =|=	    Super_L+[PrtScr]		=|=	Launch Gnome Screenshot Manager			            		=|=	key
+i3-gaps =|=		Custom =|=  	Super_L+[PrtScr]		=|=	Launch Gnome Screenshot Manager			               		=|=	key
+i3-gaps =|=		Layout =|=	    Super_L+[e]			    =|=	Launch Nautilus / File Manager			             		=|=	key
+i3-gaps =|=		Layout =|=	    Alt+Grave		    	=|=	Display rofi Window Menu			                   		=|=	key
+i3-gaps =|=		Window =|=	    Super_L+[Left]			=|=	Focus Window Left					                    	=|=	key
+i3-gaps =|=		Window =|=  	Super_L+[Right			=|=	Focus Window Right					                       	=|=	key
+i3-gaps =|=		Window =|=	    Super_L+[Up]			=|=	Focus Window Up						                    	=|=	key
+i3-gaps =|=		Window =|=	    Super_L+[Down]			=|=	Focus Window Down			                    			=|=	key
+i3-gaps =|=		Window =|=  	Super_L+[h]		    	=|=	Set split to horizontal		                   				=|=	key
+i3-gaps =|=		Window =|=  	Super_L+[v]		    	=|=	Set split to vertical		                				=|=	key
+i3-gaps =|=		Window =|=  	Super_L+[f]		    	=|=	Fullscreen toggle			                    			=|=	key
+i3-gaps =|=		Window =|=  	Super_L+Shift+[Left]	=|=	Move Window Left			                    			=|=	key
+i3-gaps =|=		Window =|=  	Super_L+Shift+[Right	=|=	Move Window Right			                      			=|=	key
+i3-gaps =|=		Window =|=  	Super_L+Shift+[Up]		=|=	Move Window Up				                    			=|=	key
+i3-gaps =|=		Window =|=  	Super_L+Shift+[Down]	=|=	Move Window Down			                    			=|=	key
+i3-gaps =|=		Window =|=	    Super_L+Shift+[q]		=|=	Kill selected Window					                	=|=	key
+i3-gaps =|=		Window =|=  	Super_L+[r]			    =|=	Resize selected Window (Left/Right/Up/Down/Esc)	    		=|=	key
+i3-gaps =|=		Layout =|=  	Super_L+[s]			    =|=	Layout STACKED				                    			=|=	key
+i3-gaps =|=		Layout =|=  	Super_L+[w]			    =|=	Layout TABBED					                    		=|=	key
+i3-gaps =|=		Layout =|=  	Super_L+[t]			    =|=	Layout TOGGLE SPLIT				                    		=|=	key
+i3-gaps =|=		Layout =|=      Super_L+Shift+[Space]	=|=	Toggle floating						                    	=|=	key
+i3-gaps =|=		Layout =|=  	Super_L+[a]			    =|=	Focus Parent							                    =|=	key
+i3-gaps =|=		Layout =|=  	Super_L+Shift+[g]		=|=	Configure windows gaps (i=inner / o=outer)	        		=|=	key
+i3-gaps =|=		Layout =|=  	Super_L+Shift+[g]		=|=	Configure Outer gaps (i=inner) [Shift]+[+] or [-] or [0]	=|=	key
+i3-gaps =|=		Layout =|=  	Super_L+Shift+[g]		=|=	Configure Inner gaps (o=outer) [Shift]+[+] or [-] or [0]	=|=	key
 
 
 

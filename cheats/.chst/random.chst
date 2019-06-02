@@ -1,3 +1,3 @@
-Random		=|= General		=|= xev							=|= Launch xev to capture keypresses			=|= type
+Random		=|= General		=|= xev							=|= Launch xev to capture keypresses		    	=|= type
 Random		=|= General		=|= xprop						=|= Launch xprop to capture Window name/class etc.	=|= type
 Random		=|= General		=|= showkey						=|= Launch showkey to listen for keypresses.		=|= type

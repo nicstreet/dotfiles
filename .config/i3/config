@@ -283,12 +283,11 @@ client.focused_inactive  $color1 	$color1 	$color0 	$color1 	$color1
 client.unfocused         $color1 	$color1 	$color0 	$color1 	$color1
 client.urgent            $color5 	$color5 	$color0 	$color5 	$color5
 
-# Modified 22-04-2019 (Replace default bar with Polybar)
-# exec_always --no-startup-id "/root/.config/polybar/polybar.sh"
+exec_always --no-startup-id "/root/.config/polybar/polybar.sh" # Modified 22-04-2019 (Replace default bar with Polybar)
 
 # Global Window Options
 # Addition (1)
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 # Individual Window Options
 for_window [class="Terminator" instance="terminator" title="Terminator Preferences"] floating enable
@@ -300,7 +299,7 @@ for_window [class="VirtualBox Manager" instance="VirtualBox Manager" title="Orac
 for_window [class="Gnome-calculator" instance="gnome-calculator" title="Calculator" window_role="gnome-calculator"] floating enable
 
 # Order for Burpsuite is important
-for_window [title=".*Community.*"] floating enable
+for_window [title=".*Community.*"] floating enable 	#
 for_window [title=".*Temporary.*"] floating disable
 
 # Move Zim preferences to current Workspace.
