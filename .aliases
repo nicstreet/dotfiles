@@ -19,7 +19,7 @@ alias editx="nano ~/.Xresources"
 alias editbash="nano ~/.bashrc"
 
 # Launch
-alias htb="~/scripts/htbvpn.sh"
+alias htb="~/dotfiles/scripts/htbvpn.sh"
 
 # Reload
 alias src="source ~/.bashrc"

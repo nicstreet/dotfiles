@@ -236,6 +236,7 @@ exec --no-startup-id $HOME/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
 # exec --no-startup-id "msfdb start"
+exec --no-startup-id dunst
 exec --no-startup-id code --user-data-dir $HOME/Dropbox/working
 exec "terminator -g $HOME/.config/terminator/config -p streety"
 exec "terminator -g $HOME/.config/terminator/config -p streety"
