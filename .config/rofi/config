@@ -1,7 +1,7 @@
 #!rofi.color-window: argb: CC222222, argb: EE000000, argb: EE000000
 #!rofi.color-normal: argb: 00000000, #777777, argb: 00000000, #777777
 #!rofi.color-active: argb: EE000000, argb: EE000000, argb: EE000000
-rofi.theme: /root/.config/rofi/colors-rofi-dark.rasi
+rofi.theme: /home/nic/.config/rofi/colors-rofi-dark.rasi
 -hide-scrollbar
 -font "mono 12"
 #rofi -show run -modi run -location 1 -width 80 \

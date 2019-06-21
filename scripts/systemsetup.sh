@@ -31,33 +31,33 @@ apt-get -y install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev lib
 apt-get -y qml-module-qtquick-window2
 
 # Clone dotfiles git repository
-git clone https://github.com/nicstreet/dotfiles dotfiles
+# git clone https://github.com/nicstreet/dotfiles dotfiles
 
 # Remove existing files/folders and replace with symlinks to dotfiles
 
-rm ~/.bashrc
+rm $HOME/.bashrc
 
-ln -sv ~/dotfiles/.bashrc ~
-ln -sv ~/dotfiles/.aliases ~
-ln -sv ~/dotfiles/.functions ~
-ln -sv ~/dotfiles/.Xresources ~
-ln -sv ~/dotfiles/.tmux.conf ~
-ln -sv ~/dotfiles/.config/compton.conf ~/.config/
-ln -sv ~/dotfiles/.config/i3/ ~/.config/
-ln -sv ~/dotfiles/.config/polybar/ ~/.config/
-ln -sv ~/dotfiles/.config/rofi/ ~/.config/
-ln -sv ~/dotfiles/.config/terminator/ ~/.config/
-ln -sv ~/dotfiles/.config/zim/ ~/.config/
+ln -sv $HOME/dotfiles/.bashrc $HOME
+ln -sv $HOME/dotfiles/.aliases $HOME
+ln -sv $HOME/dotfiles/.functions $HOME
+ln -sv $HOME/dotfiles/.Xresources $HOME
+ln -sv $HOME/dotfiles/.tmux.conf $HOME
+ln -sv $HOME/dotfiles/.config/compton.conf $HOME/.config/
+ln -sv $HOME/dotfiles/.config/i3/ $HOME/.config/
+ln -sv $HOME/dotfiles/.config/polybar/ $HOME/.config/
+ln -sv $HOME/dotfiles/.config/rofi/ $HOME/.config/
+ln -sv $HOME/dotfiles/.config/terminator/ $HOME/.config/
+ln -sv $HOME/dotfiles/.config/zim/ $HOME/.config/
 
 # Update and Upgrade
 apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
 
-# configure ~/ with appropriate folders
-mkdir ~/apps
-mkdir ~/working
+# configure $HOME/ with appropriate folders
+mkdir $HOME/apps
+mkdir $HOME/working
 
 # Install i3-gaps, configure and build
-cd ~/apps
+cd $HOME/apps
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
 autoreconf --force --install
@@ -76,7 +76,7 @@ chmod +x /usr/local/bin/greenclip
 
 # Install cava - Music Visualizer
 apt-get -y install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
-cd ~/apps
+cd $HOME/apps
 git clone https://github.com/karlstav/cava
 cd cava
 bash autogen.sh
@@ -89,7 +89,7 @@ apt-get -y install dbus libxinerama1 libxrandr2 libxss1 glib pango cairo libgtk-
 apt-get -y install libpango-1.0-0
 
 # Move to the /apps folder
-cd ~/apps
+cd $HOME/apps
 
 # Clone from git and then make / install
 git clone https://github.com/dunst-project/dunst.git
@@ -103,7 +103,7 @@ git clone https://github.com/AppleDesignResources/SanFranciscoFont
 
 # Copy required files into directories
 # Dunst icons
-cp -a ~/dotfiles/icons/* /usr/share/icons/gnome/16x16/status/
+cp -a $HOME/dotfiles/icons/* /usr/share/icons/gnome/16x16/status/
 
 
 # To be added:

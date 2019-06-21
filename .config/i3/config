@@ -6,7 +6,7 @@
 # Modified:    22nd Apr 2019 - Base Config
 #              25th Apr 2019 - Additional window management & New Colour Scheme
 #              28th Apr 2019 - Reconfiguration with Polybar
-#              29th Apr 2019 - Moved .config files to ~/dotfiles to allow git backup
+#              29th Apr 2019 - Moved .config files to $HOME/dotfiles to allow git backup
 #              30th Apr 2019 - Addition (1) - no borders + modified gaps (from 20/3 to 7/1)
 #              30th Apr 2019 - Configured colours to use .Xresources
 #              01st May 2019 - Addition (2) - scratchpad implemented
@@ -42,7 +42,7 @@ workspace_auto_back_and_forth no
 floating_modifier $mod
 
 # Bind terminal to win+return
-bindsym $mod+Return exec "terminator -g ~/.config/terminator/config -p streety"
+bindsym $mod+Return exec "terminator -g $HOME/.config/terminator/config -p streety"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -51,22 +51,22 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run -hide-scrollbar -line-padding 4 -padding 20 -lines 20 -font "San Francisco Display Medium 10" -width 30 -columns 3
 
 # Display Time via Dunst
-bindsym $mod+y exec ~/.config/i3/time.sh
+bindsym $mod+y exec $HOME/.config/i3/time.sh
 
 # Display rofi - CheatSheets
-bindsym $mod+i exec ~/.config/i3/cheatsheet.sh
+bindsym $mod+i exec $HOME/.config/i3/cheatsheet.sh
 
 # Display System Information (usage) via Dunst
-bindsym $mod+u exec ~/.config/i3/sysinfo.sh
+bindsym $mod+u exec $HOME/.config/i3/sysinfo.sh
 
 # Launch rofi - Power Menu
-bindsym $mod+p exec ~/.config/i3/powermenu.sh
+bindsym $mod+p exec $HOME/.config/i3/powermenu.sh
 
 # Launch rofi - Options Menu
-bindsym $mod+o exec ~/.config/i3/optionmenu.sh
+bindsym $mod+o exec $HOME/.config/i3/optionmenu.sh
 
 # Launch clipboard ROFI (greenclip)
-bindsym $mod+c exec ~/.config/i3/greenclip.sh
+bindsym $mod+c exec $HOME/.config/i3/greenclip.sh
 
 # Keybinding
 # Change Focus using the cursor keys:
@@ -222,7 +222,7 @@ bindsym $mod+$alt+Left move container to workspace prev
 bindsym $mod+$alt+Right move container to workspace next
 
 # Wallpaper
-exec_always feh --bg-scale /root/.config/i3/wallpaper.jpeg
+exec_always feh --bg-scale $HOME/.config/i3/wallpaper.jpeg
 
 # Configure gaps size
 gaps outer 2
@@ -232,17 +232,17 @@ gaps inner 14
 
 exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/compton --config /root/.config/compton.conf
-exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id $HOME/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
-exec --no-startup-id "msfdb start"
-exec --no-startup-id code --user-data-dir ~/Dropbox/working
-exec "terminator -g ~/.config/terminator/config -p streety"
-exec "terminator -g ~/.config/terminator/config -p streety"
-#exec --no-startup-id xfce4-clipman
-#exec --no-startup-id urxvt
-#exec --no-startup-id urxvt
-#exec --no-startup-id xfce-clipman
+# exec --no-startup-id "msfdb start"
+exec --no-startup-id code --user-data-dir $HOME/Dropbox/working
+exec "terminator -g $HOME/.config/terminator/config -p streety"
+exec "terminator -g $HOME/.config/terminator/config -p streety"
+# exec --no-startup-id xfce4-clipman
+# exec --no-startup-id urxvt
+# exec --no-startup-id urxvt
+# exec --no-startup-id xfce-clipman
 # exec nm-applet
 
 # Assign Applications to Workspaces
@@ -255,8 +255,7 @@ assign [class="Nautilus"] $ws7
 assign [class="Code"] $ws4
 assign [class="calibre" instance="calibre-gui"] $ws3
 assign [class="calibre" instance="calibre-ebook-viewer"] $ws1
-
-assign [class="Zim"] $ws3
+# assign [class="Zim"] $ws3
 
 # Set colours via variables using .Xresources
 set_from_resource $color0  i3wm.color0  #000000
@@ -299,7 +298,7 @@ for_window [class="VirtualBox Manager" instance="VirtualBox Manager" title="Orac
 for_window [class="Gnome-calculator" instance="gnome-calculator" title="Calculator" window_role="gnome-calculator"] floating enable
 
 # Order for Burpsuite is important
-for_window [title=".*Community.*"] floating enable 	#
+for_window [title=".*Community.*"] floating enable
 for_window [title=".*Temporary.*"] floating disable
 
 # Move Zim preferences to current Workspace.
