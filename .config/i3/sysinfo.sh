@@ -21,7 +21,7 @@ cpuinfo="CPU: `top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'` %\r"
 
 hddinfo="HDD: `df -lh | awk '{if ($6 == "/") { print $5 }}' | head -1 | cut -d'%' -f1` %\r\r"
 
-lanip=`ifconfig eth0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
+lanip=`ifconfig enp4s0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 
 if [ "$(pgrep openvpn)" ]
 then

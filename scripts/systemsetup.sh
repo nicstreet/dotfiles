@@ -74,6 +74,10 @@ ln -sv $HOME/dotfiles/.config/polybar/ $HOME/.config/
 ln -sv $HOME/dotfiles/.config/rofi/ $HOME/.config/
 ln -sv $HOME/dotfiles/.config/terminator/ $HOME/.config/
 ln -sv $HOME/dotfiles/.config/zim/ $HOME/.config/
+ln -sv $HOME/dotfiles/.config/dunst/ $HOME/.config/
+ln -sv $HOME/dotfiles/cheats/ $HOME/cheats
+ln -sv $HOME/dotfiles/nano/ $HOME/nano
+ln -sv $HOME/dotfiles/.nanorc $HOME/
 
 echo "################################################################################"
 echo "#                                                                              #"

@@ -231,7 +231,7 @@ gaps inner 14
 # Start applications on startup
 
 exec --no-startup-id greenclip daemon
-exec --no-startup-id /usr/bin/compton --config /root/.config/compton.conf
+exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id $HOME/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
