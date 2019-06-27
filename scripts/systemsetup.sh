@@ -153,11 +153,20 @@ git clone https://github.com/AppleDesignResources/SanFranciscoFont
 # Dunst icons
 cp -a $HOME/dotfiles/icons/* /usr/share/icons/gnome/16x16/status/
 
+# Dropbox installation
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
+# Will need confirmation from user about linking Dropbox account.
+
+# Opera Installation
+sudo apt-get install opera-stable
+
+# Clean up Apt post installation
 apt autoremove
 
+# Install packages via PIP3
+sudo pip3 install pywal
+
 # To be added:
-# Dropbox integration
-# Opera install
-# pywal from git
 # polybar from git
 

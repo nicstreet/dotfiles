@@ -229,22 +229,22 @@ gaps outer 2
 gaps inner 14
 
 # Start applications on startup
-
 exec --no-startup-id greenclip daemon
 exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id $HOME/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
-# exec --no-startup-id "msfdb start"
 exec --no-startup-id dunst
 exec --no-startup-id code --user-data-dir $HOME/Dropbox/working
-exec "terminator -g $HOME/.config/terminator/config -p streety"
-exec "terminator -g $HOME/.config/terminator/config -p streety"
+exec --no-startup-id "terminator -g $HOME/.config/terminator/config -p streety"
+exec --no-startup-id "terminator -g $HOME/.config/terminator/config -p streety"
+exec --no-startup-id virtualbox
 # exec --no-startup-id xfce4-clipman
 # exec --no-startup-id urxvt
 # exec --no-startup-id urxvt
 # exec --no-startup-id xfce-clipman
 # exec nm-applet
+# exec --no-startup-id "msfdb start"
 
 # Assign Applications to Workspaces
 assign [class="Firefox"] $ws2

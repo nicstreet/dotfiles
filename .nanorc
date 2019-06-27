@@ -1,5 +1,5 @@
-include /usr/share/nano/sh.nanorc
-include /usr/share/nano/i3.nanorc
+#include /usr/share/nano/sh.nanorc
+#include /usr/share/nano/i3.nanorc
 include "~/nano/apacheconf.nanorc"
 include "~/nano/arduino.nanorc"
 include "~/nano/asciidoc.nanorc"
