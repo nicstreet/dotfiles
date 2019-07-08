@@ -1,0 +1,5 @@
+kazam		=|= Start recording		=|= Super_l+Control_l+r					=|= Start recording					=|= key
+kazam		=|= Pause recording		=|= Super_L+Control_L+[p]				        =|= Pause recording					=|= key
+kazam		=|= Stop recording		=|= Super_L+Control_L+[f]					=|= Stop recording					=|= key
+kazam		=|= Quit kazam			=|= Super_L+Control_L+[q]					=|= Quit Kazam					        =|= key
+

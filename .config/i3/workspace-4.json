@@ -1,0 +1,107 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 380,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "/bin/bash",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^\\/bin\\/bash$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 380,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "/bin/bash",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^\\/bin\\/bash$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 380,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "/bin/bash",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^\\/bin\\/bash$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 380,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "/bin/bash",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^\\/bin\\/bash$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

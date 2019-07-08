@@ -228,7 +228,17 @@ exec_always feh --bg-scale $HOME/.config/i3/wallpaper.jpeg
 gaps outer 2
 gaps inner 14
 
+# Configure Templates
+bindsym $mod+$alt+F1 exec ~/.config/i3/ws1.sh
+bindsym $mod+$alt+F2 exec ~/.config/i3/ws2.sh
+bindsym $mod+$alt+F3 append_layout ~/.config/i3/workspace-3.json
+bindsym $mod+$alt+F4 append_layout ~/.config/i3/workspace-4.json
+bindsym $mod+$alt+F5 append_layout ~/.config/i3/workspace-5.json
+bindsym $mod+$alt+F6 append_layout ~/.config/i3/workspace-6.json
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
+
 # Start applications on startup
+exec --no-startup-id ~/startpage/startpage.sh
 exec --no-startup-id greenclip daemon
 exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id $HOME/.dropbox-dist/dropboxd
@@ -301,6 +311,7 @@ for_window [class="Gnome-calculator" instance="gnome-calculator" title="Calculat
 # Order for Burpsuite is important
 for_window [title=".*Community.*"] floating enable
 for_window [title=".*Temporary.*"] floating disable
+#for_window [title=".*Community.*"] floating enable
 
 # Move Zim preferences to current Workspace.
 for_window [class="Zim" instance="zim" title="Preferences - Zim"] move window to workspace current
