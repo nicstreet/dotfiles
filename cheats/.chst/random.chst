@@ -1,3 +1,5 @@
 Random		=|= General		=|= xev							=|= Launch xev to capture keypresses		    	=|= type
 Random		=|= General		=|= xprop						=|= Launch xprop to capture Window name/class etc.	=|= type
 Random		=|= General		=|= showkey						=|= Launch showkey to listen for keypresses.		=|= type
+Random		=|= General		=|= for x in 9000 8000 7000; do nmap -Pn --host_timeout 201 --max-retries 0 -p $x server_ip_address; done =|= Port Knock =|= type
+Random		=|= Shell		=|= python -c 'import pty; pty.spawn("/bin/bash")' =|= Upgrade Shell =|= type

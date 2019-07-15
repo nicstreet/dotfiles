@@ -137,6 +137,15 @@ echo
 
 PS1=" \[\e[37;44m\] \! \[\e[m\]\[\e[32;47m\] \w \[\e[m\]\[\e[37;44m\] \043 \[\e[m\] "
 
+## ENSURE HISTORY CAPTURES COMMANDS FROM ALL SESSIONS ##
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+# append history entries..
+shopt -s histappend
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+## ENSURE TMUX LOADS IN EVERY TERMINAL SESSION ##
 # Load TMUX in every terminal
 #case $- in *i*)
 #   [ -z "$TMUX" ] && exec tmux
@@ -146,3 +155,4 @@ function title()
 {
    echo -en "\e]2;$1\a"
 }
+

@@ -1,0 +1,2 @@
+nc		=|= One-Liner		=|= netcat -z -v -w 1 x.x.x.x 80-443				=|= nc port scanner							=|= type
+

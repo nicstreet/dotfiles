@@ -44,6 +44,8 @@ apt-get -qq install python3-pip
 apt-get -qq install zim
 apt-get -qq install gparted
 apt-get -qq install openvpn
+apt-get -qq install python-gtksourceview2
+apt-get -qq install kazam
 
 # Require for Greenclip
 apt-get -qq install xdotool
@@ -115,6 +117,7 @@ ln -sv $HOME/dotfiles/.config/dunst/ $HOME/.config/
 ln -sv $HOME/dotfiles/cheats/ $HOME/cheats
 ln -sv $HOME/dotfiles/nano/ $HOME/nano
 ln -sv $HOME/dotfiles/.nanorc $HOME/
+ln -sv $HOME/dotfiles/startpage/ $HOME/
 
 echo "*##############################################################################*"
 echo "*                                                                              *"
@@ -138,6 +141,11 @@ echo ""
 # configure $HOME/ with appropriate folders
 mkdir $HOME/apps
 mkdir $HOME/working
+
+# Install Sublime Text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt get install sublime-text
 
 # Install software via PIP (Python)
 

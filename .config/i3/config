@@ -68,6 +68,9 @@ bindsym $mod+o exec $HOME/.config/i3/optionmenu.sh
 # Launch clipboard ROFI (greenclip)
 bindsym $mod+c exec $HOME/.config/i3/greenclip.sh
 
+# Launch Screenshot Script
+bindsym $mod+backslash exec $HOME/.config/i3/ss.sh
+
 # Keybinding
 # Change Focus using the cursor keys:
 bindsym $mod+Left focus left
@@ -226,7 +229,7 @@ exec_always feh --bg-scale $HOME/.config/i3/wallpaper.jpeg
 
 # Configure gaps size
 gaps outer 2
-gaps inner 14
+gaps inner 40
 
 # Configure Templates
 bindsym $mod+$alt+F1 exec ~/.config/i3/ws1.sh
@@ -238,26 +241,24 @@ bindsym $mod+$alt+F6 append_layout ~/.config/i3/workspace-6.json
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 
 # Start applications on startup
-exec --no-startup-id ~/startpage/startpage.sh
+exec --no-startup-id "terminator -g $HOME/.config/terminator/config -p streety"
+exec --no-startup-id dunst
+exec --no-startup-id bash ~/startpage/startpage.sh
+# exec --no-startup-id "sh -c 'sleep 3'"
 exec --no-startup-id greenclip daemon
-exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id $HOME/.dropbox-dist/dropboxd
 exec --no-startup-id firefox
 exec --no-startup-id zim
-exec --no-startup-id dunst
-exec --no-startup-id code --user-data-dir $HOME/Dropbox/working
-exec --no-startup-id "terminator -g $HOME/.config/terminator/config -p streety"
-exec --no-startup-id "terminator -g $HOME/.config/terminator/config -p streety"
-exec --no-startup-id virtualbox
-# exec --no-startup-id xfce4-clipman
-# exec --no-startup-id urxvt
+exec --no-startup-id compton --config ~/.config/compton.conf
 # exec --no-startup-id urxvt
 # exec --no-startup-id xfce-clipman
 # exec nm-applet
 # exec --no-startup-id "msfdb start"
+# exec --no-startup-id code --user-data-dir $HOME/Dropbox/working
+# exec --no-startup-id virtualbox
 
 # Assign Applications to Workspaces
-assign [class="Firefox"] $ws2
+assign [class="Firefox"] $ws1
 assign [class="Google-chrome"] $ws2
 assign [class="Cherrytree"] $ws3
 assign [class="VirtualBox Manager"] $ws5
@@ -297,7 +298,7 @@ exec_always --no-startup-id "/root/.config/polybar/polybar.sh" # Modified 22-04-
 
 # Global Window Options
 # Addition (1)
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 # Individual Window Options
 for_window [class="Terminator" instance="terminator" title="Terminator Preferences"] floating enable
@@ -316,6 +317,9 @@ for_window [title=".*Temporary.*"] floating disable
 # Move Zim preferences to current Workspace.
 for_window [class="Zim" instance="zim" title="Preferences - Zim"] move window to workspace current
 for_window [class="Zim" instance="zim" title="Properties - Zim"] move window to workspace current
+for_window [class="Zim" title="manual - Zim"] move window to workspace current
+for_window [class="Zim" title="manual - Zim"] floating enable
+
 
 # Set behaviour for different window types
 for_window [window_role="pop-up"] floating enable
@@ -335,4 +339,4 @@ for_window [class="Zim" instance="zim" title="Home - Zim"] move to scratchpad
 # exec --no-startup-id i3-msg "workspace $ws2; append_layout /home/jarvick/.config/i3/terms.layout; exec $term; exec $term; exec $term;"
 
 # Restart i3 to enforce Compton transparency
-exec "sh -c 'sleep 6; exec i3-msg restart'"
+# exec "sh -c 'sleep 3; exec i3-msg restart'"

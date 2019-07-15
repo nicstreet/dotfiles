@@ -69,7 +69,7 @@ run_rofi () {
       -color-active "#222222, #E356A7, #222222, #007763, #b1b4b3" \
       -color-urgent "#222222, #b1b4b3, #222222, #77003d, #b1b4b3" \
       -kb-row-select "Tab" -kb-row-tab "" \
-    -font "Monospace 9" -lines 15 -width 1000 -dmenu -p "> " "$@"
+    -font "Monospace 9" -lines 15 -width 1300 -dmenu -p "> " "$@"
 
 
 }

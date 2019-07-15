@@ -34,6 +34,7 @@ netinfo="LAN:$lanip\nVPN:$vpnip"
 
 d_allinfo="$sysinfo$meminfo$cpuinfo$hddinfo$netinfo"
 
-notify-send $d_icon $d_urgency '<span foreground="#b64903" font="12"><b>System Information</b></span>' "$d_allinfo"
+notify-send $d_urgency $d_ico '<span foreground="#b64903" font="12"><b>System Information</b></span>' "$d_allinfo"
+#notify-send $d_icon $d_urgency '<span foreground="#b64903" font="12"><b>System Information</b></span>' "$d_allinfo"
 #notify-send --urgency=normal --icon=system-task '<span foreground="#b4430e" font="12"><b>System Information</b></span>' "$sysinfo1\r$sysinfo2\r$sysinfo3\r$sysinfo4\r\r$meminfo1"
 

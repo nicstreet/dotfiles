@@ -29,3 +29,7 @@ alias xr="xrdb ~/.Xresources"
 alias ws="~/scripts/simplehttpserver.sh"
 alias killws="pgrep python | xargs kill"
 alias msf="msfconsole"
+
+# Notetaking assistance
+
+alias zimmer="input.txt && cat input.txt | xclip && zim --plugin append -t --clipboard --notebook home --page root:htb:box && rm input.txt"

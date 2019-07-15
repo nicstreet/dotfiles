@@ -1,0 +1,1 @@
+Zim		=|= Terminal		=|= '> input.txt && cat input.txt | xclip && zim --plugin append -t --clipboard --notebook home --page root:htb:box && rm input.txt'	=|= Copy Terminal command to Zim Wiki =|= type
