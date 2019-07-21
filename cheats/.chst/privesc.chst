@@ -1,0 +1,2 @@
+PrivEsc		=|= Linux	=|= cat /etc/issue && cat /etc/*release && cat /proc/version && ls /boot | grep "vmlinuz" && lsb_release -a && uname -a	=|= OS / Kernel and Service Pack Info =|= type
+

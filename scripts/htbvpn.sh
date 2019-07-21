@@ -1,6 +1,6 @@
 #!/bin/bash
 # Start HTB open VPN
-openvpn ~/Dropbox/working/intersect.ovpn &
+sudo openvpn ~/Dropbox/working/intersect.ovpn &
 
 sleep 5 
 
