@@ -3,17 +3,13 @@
 .dotfiles from Kali Linux. System Installed April 2019. Still under development.
 Amended May 2020 to simplify and accomodate some new changes.
 
-** Guide
+## Guide
 
 1. `git clone https://github.com/nicstreet/dotfiles/ /home/nic/dotfiles`
 2. `cd dotfiles/scripts`
 3. `sudo bash systemsetup.sh`
 
-Just some simple `formatting` to test.
-
-> this is another
-
-**Still to be completed**
+## Still to be completed
 
 - [ ] Create Kali rofi menu for things like
 	- python webserver
@@ -26,6 +22,3 @@ Just some simple `formatting` to test.
 
 - [ ] Fix rofi Music Menu
 	- Mute not working
-	
-
-
