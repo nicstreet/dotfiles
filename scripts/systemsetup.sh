@@ -8,7 +8,7 @@ echo "*                                                                         
 echo "*##############################################################################*"
 echo ""
 
-apt-get -qq update
+sudo apt-get -qq update
 
 echo "*##############################################################################*"
 echo "*                                                                              *"
@@ -18,78 +18,80 @@ echo "*#########################################################################
 echo ""
 
 # Install core applications and utilities
-apt-get -qq install neofetch
-apt-get -qq install compton
-apt-get -qq install feh
-apt-get -qq install i3
-apt-get -qq install xfce4-clipman
-apt-get -qq install terminator
-apt-get -qq install rofi
-apt-get -qq install htop
-apt-get -qq install cmatrix
-apt-get -qq install deepin-screenshot
-apt-get -qq install pavucontrol
-apt-get -qq install gdebi
-apt-get -qq install virtualbox
-apt-get -qq install virtualbox-dkms
-apt-get -qq install virtualbox-guest-additions-iso
-apt-get -qq install cmus
-apt-get -qq install calibre
-apt-get -qq install lshw
-apt-get -qq install nautilus
-apt-get -qq install gnome-screenshot
-apt-get -qq install tmux
-apt-get -qq install net-tools
-apt-get -qq install python3-pip
-apt-get -qq install zim
-apt-get -qq install gparted
-apt-get -qq install openvpn
-apt-get -qq install python-gtksourceview2
-apt-get -qq install kazam
+sudo apt-get -qq install neofetch
+sudo apt-get -qq install compton
+sudo apt-get -qq install feh
+sudo apt-get -qq install i3
+sudo apt-get -qq install xfce4-clipman
+sudo apt-get -qq install terminator
+sudo apt-get -qq install rofi
+sudo apt-get -qq install htop
+sudo apt-get -qq install cmatrix
+sudo apt-get -qq install deepin-screenshot
+sudo apt-get -qq install pavucontrol
+sudo apt-get -qq install gdebi
+sudo apt-get -qq install virtualbox
+sudo apt-get -qq install virtualbox-dkms
+sudo apt-get -qq install virtualbox-guest-additions-iso
+sudo apt-get -qq install cmus
+sudo apt-get -qq install calibre
+sudo apt-get -qq install lshw
+sudo apt-get -qq install nautilus
+sudo apt-get -qq install gnome-screenshot
+sudo apt-get -qq install tmux
+sudo apt-get -qq install net-tools
+sudo apt-get -qq install python3-pip
+# sudo apt-get -qq install zim
+sudo apt-get -qq install gparted
+sudo apt-get -qq install openvpn
+sudo apt-get -qq install python-gtksourceview2
+sudo apt-get -qq install kazam
+sudo apt-get -qq install joplin
 
 # Require for Greenclip
-apt-get -qq install xdotool
+sudo apt-get -qq install xdotool
 
 #Required for i3gaps
-apt-get -qq install libxcb1-dev
-apt-get -qq install libxcb-keysyms1-dev
-apt-get -qq install libpango1.0-dev
-apt-get -qq install libxcb-util0-dev
-apt-get -qq install libxcb-icccm4-dev
-apt-get -qq install libyajl-dev
-apt-get -qq install libstartup-notification0-dev
-apt-get -qq install libxcb-randr0-dev
-apt-get -qq install libev-dev
-apt-get -qq install libxcb-cursor-dev
-apt-get -qq install libxcb-xinerama0-dev
-apt-get -qq install libxcb-xkb-dev
-apt-get -qq install libxkbcommon-dev
-apt-get -qq install libxkbcommon-x11-dev
-apt-get -qq install autoconf
-apt-get -qq install libxcb-xrm-dev
+sudo apt-get -qq install libxcb-keysyms1-dev
+sudo apt-get -qq install libpango1.0-dev
+sudo apt-get -qq install libxcb-util0-dev
+sudo apt-get -qq install libxcb-icccm4-dev
+sudo apt-get -qq install libyajl-dev
+sudo apt-get -qq install libstartup-notification0-dev
+sudo apt-get -qq install libxcb-randr0-dev
+sudo apt-get -qq install libev-dev
+sudo apt-get -qq install libxcb-cursor-dev
+sudo apt-get -qq install libxcb-xinerama0-dev
+sudo apt-get -qq install libxcb-xkb-dev
+sudo apt-get -qq install libxkbcommon-dev
+sudo apt-get -qq install libxkbcommon-x11-dev
+sudo apt-get -qq install autoconf
+sudo apt-get -qq install libxcb-xrm-dev
+sudo apt-get -qq install libxcb-xrm-dev
+sudo apt-get -qq install libxcb1-dev
 
 # Required for ROFI Settings Menu
-apt-get -qq install lxappearance
-apt-get -qq install gtk-chtheme
-apt-get -qq install qt4-qtconfig
+sudo apt-get -qq install lxappearance
+sudo apt-get -qq install gtk-chtheme
+sudo apt-get -qq install qt4-qtconfig
 
 # Required for Dunst
-apt-get -qq install libnotify-bin
-apt-get -qq install dbus-1-dbg
+sudo apt-get -qq install libnotify-bin
+sudo apt-get -qq install dbus-1-dbg
 
 # Required for Sound
-apt-get -qq install alsa-tools
-apt-get -qq install alsa-utils
+sudo apt-get -qq install alsa-tools
+sudo apt-get -qq install alsa-utils
 
 # Required for cava (Graphic Equaliser)
-apt-get -qq install libfftw3-dev
-apt-get -qq install libasound2-dev
-apt-get -qq install libncursesw5-dev
-apt-get -qq install libpulse-dev
-apt-get -qq install libtool
+sudo apt-get -qq install libfftw3-dev
+sudo apt-get -qq install libasound2-dev
+sudo apt-get -qq install libncursesw5-dev
+sudo apt-get -qq install libpulse-dev
+sudo apt-get -qq install libtool
 
 # Required for (other)
-apt-get -qq install qml-module-qtquick-window2
+sudo apt-get -qq install qml-module-qtquick-window2
 
 echo "*##############################################################################*"
 echo "*                                                                              *"
@@ -127,9 +129,9 @@ echo "*#########################################################################
 echo ""
 
 # Update and Upgrade
-# apt-get -qq update
-# apt-get -qq upgrade
-# apt-get -qq dist-upgrade
+# sudo apt-get -qq update
+# sudo apt-get -qq upgrade
+# sudo apt-get -qq dist-upgrade
 
 echo "*##############################################################################*"
 echo "*                                                                              *"
@@ -143,9 +145,9 @@ mkdir $HOME/apps
 mkdir $HOME/working
 
 # Install Sublime Text
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt get install sublime-text
+# wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+# echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+# sudo apt get install sublime-text
 
 # Install software via PIP (Python)
 
@@ -155,12 +157,12 @@ pip3 install pywal
 cd $HOME/apps
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
+git checkout gaps && git pull
 autoreconf --force --install
-../configure --prefix=/usr --sysconfdir=/etc
 rm -rf build
 mkdir build
 cd build
-../configure --prefix=/usr --sysconfdir=/etc
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make
 sudo make install
 
@@ -170,7 +172,7 @@ wget https://github.com/erebe/greenclip/releases/download/3.2/greenclip
 chmod +x /usr/local/bin/greenclip
 
 # Install cava - Music Visualizer
-apt-get -qq install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
+sudo apt-get -qq install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
 cd $HOME/apps
 git clone https://github.com/karlstav/cava
 cd cava
@@ -180,8 +182,8 @@ make
 make install
 
 # Install dunst
-apt-get -qq install dbus libxinerama1 libxrandr2 libxss1 glib pango cairo libgtk-3-dev
-apt-get -qq install libpango-1.0-0
+sudo apt-get -qq install dbus libxinerama1 libxrandr2 libxss1 glib pango cairo libgtk-3-dev
+sudo apt-get -qq install libpango-1.0-0
 
 # Move to the /apps folder
 cd $HOME/apps
@@ -212,38 +214,38 @@ sudo pip3 install pywal
 # Will need confirmation from user about linking Dropbox account.
 
 # Git Configuration
-echo "*##############################################################################*"
-echo "*                                                                              *"
-echo "* Configure git...                                                             *"
-echo "*                                                                              *"
-echo "*##############################################################################*"
-echo ""
-echo "Enter the Global Username for Git:";
-read GITUSER;
-git config --global user.name "${GITUSER}"
-
-echo "Enter the Global Email for Git:";
-read GITEMAIL;
-git config --global user.email "${GITEMAIL}"
-
-echo 'Git has been configured!'
-git config --list
-
-echo "Configuring /dotfiles...!
-cd ~/dotfiles/
-git add .
-git commit -m "Commit from New PC" --author="Nic Street"
-git push origin master
+#echo "*##############################################################################*"
+#echo "*                                                                              *"
+#echo "* Configure git...                                                             *"
+#echo "*                                                                              *"
+#echo "*##############################################################################*"
+#echo ""
+#echo "Enter the Global Username for Git:";
+#read GITUSER;
+#git config --global user.name "${GITUSER}"
+#
+#echo "Enter the Global Email for Git:";
+#read GITEMAIL;
+#git config --global user.email "${GITEMAIL}"
+#
+#echo 'Git has been configured!'
+#git config --list
+#
+#echo "Configuring /dotfiles...!
+#cd ~/dotfiles/
+#git add .
+#git commit -m "Commit from New PC" --author="Nic Street"
+#git push origin master
 
 # To be added:
 # polybar from git
 
-echo "*##############################################################################*"
-echo "*                                                                              *"
-echo "* SUMMARY                                                                      *"
-echo "*                                                                              *"
-echo "*##############################################################################*"
-echo ""
-echo "Status     Version"
-echo "======     ======="
-dpkg-query -W -f='${Status} ${Version}\n' $(cat packages.txt)
+#echo "*##############################################################################*"
+#echo "*                                                                              *"
+#echo "* SUMMARY                                                                      *"
+#echo "*                                                                              *"
+#echo "*##############################################################################*"
+#echo ""
+#echo "Status     Version"
+#echo "======     ======="
+#dpkg-query -W -f='${Status} ${Version}\n' $(cat packages.txt)
