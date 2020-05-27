@@ -127,9 +127,9 @@ echo "*#########################################################################
 echo ""
 
 # Update and Upgrade
-apt-get -qq update
-apt-get -qq upgrade
-apt-get -qq dist-upgrade
+# apt-get -qq update
+# apt-get -qq upgrade
+# apt-get -qq dist-upgrade
 
 echo "*##############################################################################*"
 echo "*                                                                              *"
@@ -207,8 +207,8 @@ apt autoremove
 sudo pip3 install pywal
 
 # Dropbox installation
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
+# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+# ~/.dropbox-dist/dropboxd
 # Will need confirmation from user about linking Dropbox account.
 
 # Git Configuration
